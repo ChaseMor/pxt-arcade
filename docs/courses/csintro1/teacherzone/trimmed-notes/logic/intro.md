@@ -384,7 +384,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 ```
 ### Task #4
 
-```blocks
+```ts
 enum SpriteKind {
     Player,
     Enemy

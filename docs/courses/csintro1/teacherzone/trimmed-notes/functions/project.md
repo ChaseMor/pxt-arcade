@@ -4,7 +4,32 @@ Example Projects
 
 ## [Jumper](https://makecode.com/_g6f2udLhCWaL)
 
-```blocks
+
+## [Dodger](https://makecode.com/_51vAwshDXEJb)
+
+## What did we learn? 
+
+1. Describe a feature of this game that you would like to expand and ideas for improved implementation.
+2. List the names of the functions you used. Describe for each function name, why it has a good descriptive name and/or how the function name could be improved.
+
+### ~hint
+
+### Possible Answers
+
+Answers **Vary Widely** and are unique to individuals and the games they make.
+
+1. [Instructor: encourage students to think outside the box]  I would like to have my sprite work in 3-D with virtual reality.
+2. "setSprites" function is a good name because it says exactly what it does - it "sets the sprites."  "scoring" function is an OK name but could call it "scoringEvents" as an improvement.
+
+### ~
+
+
+
+## Task Solution Appendix
+
+### Jumper
+
+```ts
 enum SpriteKind {
     Player,
     Enemy
@@ -68,9 +93,9 @@ game.onUpdateInterval(1000, function () {
 })
 ```
 
-## [Dodger](https://makecode.com/_51vAwshDXEJb)
+### Dodger
 
-```blocks
+```ts
 enum SpriteKind {
     Player,
     Enemy
@@ -135,20 +160,3 @@ mySprite.setFlag(SpriteFlag.StayInScreen, true)
 level = 1
 levelStart()
 ```
-
-
-## What did we learn? 
-
-1. Describe a feature of this game that you would like to expand and ideas for improved implementation.
-2. List the names of the functions you used. Describe for each function name, why it has a good descriptive name and/or how the function name could be improved.
-
-### ~hint
-
-### Possible Answers
-
-Answers **Vary Widely** and are unique to individuals and the games they make.
-
-1. [Instructor: encourage students to think outside the box]  I would like to have my sprite work in 3-D with virtual reality.
-2. "setSprites" function is a good name because it says exactly what it does - it "sets the sprites."  "scoring" function is an OK name but could call it "scoringEvents" as an improvement.
-
-### ~

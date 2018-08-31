@@ -8,7 +8,36 @@
 
 https://makecode.com/_7xRH8zPMg2xk
 
-```blocks
+## Example #2: Fireball Game
+
+## Student Task #2: Creating Fireballs
+
+https://makecode.com/_WyqR4Df8uLig 
+
+## What did we learn?
+
+1. How are ``||loops:while||`` loops different from ``||loops:for index||`` loops?
+2. Explain why picking up the ``||variables:fireSource||`` allowed the player to keep making fireballs, without any other buttons being pressed.
+3. **Challenge:** if ``||logic:if||`` statements didn't exist, could you use ``||loops:while||`` loops to implement the same behavior in blocks? If so, how?
+
+### ~hint
+
+Possible Solutions:
+
+1. A while loop can be based off of any logical test; a for index loop can only be used to count through numbers (in blocks).
+2. The fireSource adds to the life, which keeps the while loop going longer.
+3. The easiest way in blocks would be to add a boolean flag - for example, something along the lines of
+
+### ~
+
+
+
+
+## Task Solution Appendix
+
+### Student Task #1: Checking Math
+
+```ts
 let guess = 0
 let secondValue = 0
 let value = 0
@@ -22,13 +51,9 @@ game.splash("Correct!")
 game.over(true)
 ```
 
-## Example #2: Fireball Game
+### Student Task #2: Creating Fireballs
 
-## Student Task #2: Creating Fireballs
-
-https://makecode.com/_WyqR4Df8uLig 
-
-```blocks
+```ts
 enum SpriteKind {
     Player,
     Enemy,
@@ -117,21 +142,9 @@ game.onUpdateInterval(500, function () {
 })
 ```
 
-## What did we learn?
+#### Challenge
 
-1. How are ``||loops:while||`` loops different from ``||loops:for index||`` loops?
-2. Explain why picking up the ``||variables:fireSource||`` allowed the player to keep making fireballs, without any other buttons being pressed.
-3. **Challenge:** if ``||logic:if||`` statements didn't exist, could you use ``||loops:while||`` loops to implement the same behavior in blocks? If so, how?
-
-### ~hint
-
-Possible Solutions:
-
-1. A while loop can be based off of any logical test; a for index loop can only be used to count through numbers (in blocks).
-2. The fireSource adds to the life, which keeps the while loop going longer.
-3. The easiest way in blocks would be to add a boolean flag - for example, something along the lines of
-
-```blocks
+```ts
 let flag = true
 let count = 5
 while (count > 0 && flag) {
@@ -140,6 +153,3 @@ while (count > 0 && flag) {
 }
 game.over(false);
 ```
-
-
-### ~

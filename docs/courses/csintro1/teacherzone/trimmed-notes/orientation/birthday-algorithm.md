@@ -20,7 +20,7 @@ An Algorithm is series of steps, decisions and/or formulas. Some common examples
 
 1. Describe how well the Algorithm worked. Explain what made the algorithm work or what was tried when it did not work.
 2. Explain how the Algorithm could be improved in terms of efficiency and usability for the participant. Be sure to describe how to reduce the number of steps while maintaining the trick.
-3. Extra: Write full equation at each step. Then try to simplify each answer. 
+3. **Challenge:** write full equation at each step. Then try to simplify each answer. 
 
 ### ~hint
 

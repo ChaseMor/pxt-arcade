@@ -20,7 +20,66 @@ The changes in this task make the code a lot easier to read, and demonstrate a v
 
 https://makecode.com/_9xWYEhADoXJu
 
-```blocks
+
+## Student Task #1b: Using ``||loops:for element||``
+
+1. Start with the code from task #1a
+2. Replace the ``||loops:for index from 0 to||`` loop with a ``||loops:for element||`` loop. Be sure that it refers to the correct array
+3. Replace the ``||array:text list get value at index||`` with the ``||variables:value||`` parameter of the ``||loops:for element||`` loop
+
+
+https://makecode.com/_i58MYf9Xp1Mw
+
+
+## Student Task #2: Respond to loss of health
+
+1. Start with the code from example #2
+2. Create another ``||array:text list||``, stored in a different variable called "enemyScript". Fill it with the following strings:
+    * "go away"
+    * "why are you running into me"
+    * "leave"
+3. Add at least three other sprites in different locations around the map of ``||sprites:kind enemy||``
+4. Set the player's ``||info:life||`` to 5
+5. Create an ``||sprites:on overlap||`` event between ``||sprites:kind player||`` and ``||sprites:kind enemy||``, which causes ``||info:life||`` to change by -1 and the ``||sprites:enemy||`` to say a random word from ``||variables:enemyScript||``
+6. At the end of the same ``||sprites:on overlap||`` event, set the enemy to be a ``||sprites:ghost||``, ``||loops:pause||`` for a second and then make it so the sprite isn't a ``||sprites:ghost||``
+
+### ~hint
+
+Review the corgio extension from the Tile Map Extensions lesson; can you guess how the ``||corgio:make myCorg bark!||`` and ``||corgio:teach myCorg the word||`` blocks work?
+
+
+```package
+corgio=github:jwunderl/pxt-corgio#v0.0.12
+```
+
+### ~
+
+
+https://makecode.com/_1u627X797AVf
+
+
+## What did we learn?
+
+1. What is the difference between a ``||loops:for index from 0 to||`` and a ``||loops:for element||`` loop? Can you think of any situations where you might prefer the ``||loops:for index from 0 to||`` loop when using arrays?
+2. In task #1a, why did we use the ``||array:length of array||`` instead of just setting it to the new length (e.g. changing it to be from `0 to 3` to `0 to 6`)?
+
+
+### ~hint
+
+### Possible Solutions: Answers may vary
+
+1. ``||loops:for element||`` loops are easier and simplier to implement, but ``||loops:for index from 0 to||`` loops allow us to use the ``||variable:index||`` in each loop which may be useful.
+2. While both solutions would work, using ``||array:length of array||`` is considered better for a few reasons. The first being that if you change the array, you won't have to do anything the loop to make it work. Also, we might change the size of the array while the program is running and we won't know what number to put in the upper bound since we can't predict the size of the array. Lastly, when writing code, it is best to avoid using numbers when a we have a variable that represent the same thing. When someone is looking at the code and they see `3`, they might not know what that `3` represents, but if you use ``||arrays:length of array||``, it make it more clear that it is the length of the array.
+
+### ~
+
+
+
+## Task Solution Appendix
+
+### Task 1a: Fix the redundency
+
+```ts
 enum SpriteKind {
     Player,
     Enemy
@@ -52,16 +111,9 @@ for (let index = 0; index <= text_list.length; index++) {
 }
 ```
 
-## Student Task #1b: Using ``||loops:for element||``
+### Task 1b: Using ``||loops:for element||``
 
-1. Start with the code from task #1a
-2. Replace the ``||loops:for index from 0 to||`` loop with a ``||loops:for element||`` loop. Be sure that it refers to the correct array
-3. Replace the ``||array:text list get value at index||`` with the ``||variables:value||`` parameter of the ``||loops:for element||`` loop
-
-
-https://makecode.com/_i58MYf9Xp1Mw
-
-```blocks
+```ts
 enum SpriteKind {
     Player,
     Enemy
@@ -95,33 +147,9 @@ for (let value of text_list) {
 }
 ```
 
-## Student Task #2: Respond to loss of health
+### Task 2: Respond to loss of health
 
-1. Start with the code from example #2
-2. Create another ``||array:text list||``, stored in a different variable called "enemyScript". Fill it with the following strings:
-    * "go away"
-    * "why are you running into me"
-    * "leave"
-3. Add at least three other sprites in different locations around the map of ``||sprites:kind enemy||``
-4. Set the player's ``||info:life||`` to 5
-5. Create an ``||sprites:on overlap||`` event between ``||sprites:kind player||`` and ``||sprites:kind enemy||``, which causes ``||info:life||`` to change by -1 and the ``||sprites:enemy||`` to say a random word from ``||variables:enemyScript||``
-6. At the end of the same ``||sprites:on overlap||`` event, set the enemy to be a ``||sprites:ghost||``, ``||loops:pause||`` for a second and then make it so the sprite isn't a ``||sprites:ghost||``
-
-### ~hint
-
-Review the corgio extension from the Tile Map Extensions lesson; can you guess how the ``||corgio:make myCorg bark!||`` and ``||corgio:teach myCorg the word||`` blocks work?
-
-
-```package
-corgio=github:jwunderl/pxt-corgio#v0.0.12
-```
-
-### ~
-
-
-https://makecode.com/_1u627X797AVf
-
-```blocks
+```ts
 enum SpriteKind {
     Player,
     Enemy
@@ -252,19 +280,3 @@ burger.setPosition(Math.randomRange(24, 136), Math.randomRange(24, 96))
 donut.setPosition(Math.randomRange(24, 136), Math.randomRange(24, 96))
 info.setLife(5)
 ```
-
-
-## What did we learn?
-
-1. What is the difference between a ``||loops:for index from 0 to||`` and a ``||loops:for element||`` loop? Can you think of any situations where you might prefer the ``||loops:for index from 0 to||`` loop when using arrays?
-2. In task #1a, why did we use the ``||array:length of array||`` instead of just setting it to the new length (e.g. changing it to be from `0 to 3` to `0 to 6`)?
-
-
-### ~hint
-
-### Possible Solutions: Answers may vary
-
-1. ``||loops:for element||`` loops are easier and simplier to implement, but ``||loops:for index from 0 to||`` loops allow us to use the ``||variable:index||`` in each loop which may be useful.
-2. While both solutions would work, using ``||array:length of array||`` is considered better for a few reasons. The first being that if you change the array, you won't have to do anything the loop to make it work. Also, we might change the size of the array while the program is running and we won't know what number to put in the upper bound since we can't predict the size of the array. Lastly, when writing code, it is best to avoid using numbers when a we have a variable that represent the same thing. When someone is looking at the code and they see `3`, they might not know what that `3` represents, but if you use ``||arrays:length of array||``, it make it more clear that it is the length of the array.
-
-### ~

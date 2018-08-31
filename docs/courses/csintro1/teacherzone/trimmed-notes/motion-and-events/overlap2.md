@@ -73,7 +73,57 @@ game.onUpdate(function () {
 
 https://makecode.com/_Wjfcstfppdbu
 
-```blocks
+## Student Task #2: Add a new unique sprite with SpriteKind of "Cloud" 
+
+### ~hint
+
+Continue to reinforce to students that SpriteKind controls overlap events. Any and all sprites with the same SpriteKind designation will behave the same when used in an overlap event. So for a SpriteKind of "Cloud" - regardless if using an image of a "cloud" or a "shoe" or a single pixel "dot" will result in the same code block being run for an overlap event. In our example it results in the "bump" simulation code.
+
+### ~
+
+https://makecode.com/_iEHdaHKjmDcU
+
+## What did we learn?
+
+1. Describe how a ``||sprites:Kind||`` can improve code (for example, how it can make programming easier, more powerful, more efficient, ...). 
+2. Explain why in creating a "bump" effect negative `X` and `Y` velocities are used to change the `X` and `Y` positions. 
+
+### ~hint
+
+### Possible Solutions:
+
+1. It creates more organization of what is going on
+2. We want the sprite to move continually to a position and then continually move back. If we just change the position, the "bump" will look abrupt, almost as if the sprite is teleporting
+
+### ~
+
+
+## Rubrics
+
+### Overlap task rubric
+
+|   | 5pts | 7pts | 9pts | 10pts |
+|:---:|:---:|:---:|:---:|:---:|
+| Overlap & Events | Completed tasks | Fully completed both tasks | Completed all tasks and at least 1 Challenge | Completed all tasks and all challenge code |
+
+### Score = \_\_\_\_\_\_ /10 
+
+### What did we learn rubric 
+
+|   | 5pts | 7pts | 9pts | 10pts |
+|:---:|:---:|:---:|:---:|:---:|
+| Explanation | Answers for both questions | Explanations address all questions fully | All answers have clear explanations with at least 2 examples for question 1 | Used an exceptional explanation (such as a diagram) in question 2 |
+
+### Score = \_\_\_\_\_\_ /10  
+
+
+
+
+## Task Solution Appendix
+
+### Task 1: Soft Landing
+
+```ts
 enum SpriteKind {
     Helicopter,
     Cloud,
@@ -294,18 +344,9 @@ game.onUpdate(function () {
 })
 ```
 
+### Task 2: Add a new unique sprite with SpriteKind of "Cloud"
 
-## Student Task #2: Add a new unique sprite with SpriteKind of "Cloud" 
-
-### ~hint
-
-Continue to reinforce to students that SpriteKind controls overlap events. Any and all sprites with the same SpriteKind designation will behave the same when used in an overlap event. So for a SpriteKind of "Cloud" - regardless if using an image of a "cloud" or a "shoe" or a single pixel "dot" will result in the same code block being run for an overlap event. In our example it results in the "bump" simulation code.
-
-### ~
-
-https://makecode.com/_iEHdaHKjmDcU
-
-```blocks
+```ts
 enum SpriteKind {
     Helicopter,
     Cloud,
@@ -563,36 +604,3 @@ game.onUpdate(function () {
     copter.vy += controller.dy()
 })
 ```
-
-## What did we learn?
-
-1. Describe how a ``||sprites:Kind||`` can improve code (for example, how it can make programming easier, more powerful, more efficient, ...). 
-2. Explain why in creating a "bump" effect negative `X` and `Y` velocities are used to change the `X` and `Y` positions. 
-
-### ~hint
-
-### Possible Solutions:
-
-1. It creates more organization of what is going on
-2. We want the sprite to move continually to a position and then continually move back. If we just change the position, the "bump" will look abrupt, almost as if the sprite is teleporting
-
-### ~
-
-
-## Rubrics
-
-### Overlap task rubric
-
-|   | 5pts | 7pts | 9pts | 10pts |
-|:---:|:---:|:---:|:---:|:---:|
-| Overlap & Events | Completed tasks | Fully completed both tasks | Completed all tasks and at least 1 Challenge | Completed all tasks and all challenge code |
-
-### Score = \_\_\_\_\_\_ /10 
-
-### What did we learn rubric 
-
-|   | 5pts | 7pts | 9pts | 10pts |
-|:---:|:---:|:---:|:---:|:---:|
-| Explanation | Answers for both questions | Explanations address all questions fully | All answers have clear explanations with at least 2 examples for question 1 | Used an exceptional explanation (such as a diagram) in question 2 |
-
-### Score = \_\_\_\_\_\_ /10 

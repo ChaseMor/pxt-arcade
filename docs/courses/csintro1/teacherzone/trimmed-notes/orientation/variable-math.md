@@ -39,29 +39,11 @@ game.splash("" + answer)
 
 ## Student Task 1: Try new values in the equation 
 
-```blocks
-// https://makecode.com/_h6vfmy28s34T
+https://makecode.com/_h6vfmy28s34T
 
-let answer = 0
-answer = 9 + 2
-game.splash("9 + 2 = " + answer)
-answer = 17 + 12 
-game.splash("17+12 = " + answer)
-answer = 17 + 12 
-game.splash("21+22 = " + answer)
-```
 ### ~
 
-```blocks
-// https://makecode.com/_VaeKM9dowVam
-
-let answer = 0
-answer = 13 + 9 + 1 + 0 + 18 + 5
-game.splash("13+9+1+0+18+5=" + answer)
-/* longer equation */
-answer = 13 + 9 + 1 + 0 + 18 + 5 + 19 + 4 + 7
-game.showLongText("13 + 9 + 1 + 0 + 18 + 5 + 19 + 4 + 7 = " + answer, DialogLayout.Bottom)
-```
+https://makecode.com/_VaeKM9dowVam
 
 ## Concept: basic math operators with variables 
 
@@ -80,9 +62,89 @@ Look at the JavaScript. Parenthesis `( )` are first in order of Operations. With
 
 ### ~
 
-```blocks
-// https://makecode.com/_Euh8RJRuzhsf
+https://makecode.com/_Euh8RJRuzhsf
 
+## Student Task 3: multiple operators and variables equation
+
+### Standard:
+
+https://makecode.com/_eC9Cwk3uXiCr
+
+### Challenge:
+
+https://makecode.com/_WyA12wV0K74p
+
+## Student Task 4: Conversion
+
+https://makecode.com/_A3PHiyg9rTD6
+
+## Student Task 5: Debugging
+
+https://makecode.com/_dm7i6WUHdKsh
+
+## Variables Summary
+
+## What did we learn? 
+
+1. In MakeCode JavaScript what is the resulting value of answer for `answer = 5 + 3 * 2`? Explain why the answer is **not** 16.
+2. How is putting operators and numbers into a calculator different than writing in code (example: 2 + 3 + 4 * 4)? Explain.
+3. Research and describe 2 other Math Operators using the math menu in MakeCode (hover over values for more information) and/or use other JavaScript resources.
+
+## Rubrics
+
+### ~hint
+
+### Possible Solutions:
+
+1. The answer is 11 because JavaScript goes based off of the order of operations (PEMDAS) so it completes the multiplication operation first, which turns the expression into 5 + 6 which evaluates to 11
+2. JavaScript will use the order of operations while standard calculators, not graphing or scientific, will calculate one operation at a time from left to right
+3. Students answers will vary
+
+###
+
+### Code Tasks
+
+| points | 5 | 7 | 9 | 10 |
+|:---:|:---:|:---:|:---:|:---:|
+| Variable Math Tasks | Completed at least 4 coding tasks | Completed all 5 coding tasks |All coding tasks completed plus at least 1 Challenge | Completed 2 or more Challenges |
+
+### Score = \_\_\_\_\_\_ /10 
+
+### What did we learn Questions
+
+|   | 5pts | 7pts | 9pts | 10pts |
+|:---:|:---:|:---:|:---:|:---:|
+| Explanation | Answered at least 2 questions fully, or answered all 3 questions but parts are unclear or lack detail | Explanations address all 3 questions fully | Uses multiple examples and clear explanations | Explanations are outstanding in detail and/or use creative examples |
+### Score = \_\_\_\_\_\_ /10
+
+
+
+
+## Task Solution Appendix
+
+### Task 1: Try new values in the equation 
+
+```ts
+let answer = 0
+answer = 9 + 2
+game.splash("9 + 2 = " + answer)
+answer = 17 + 12 
+game.splash("17+12 = " + answer)
+answer = 17 + 12 
+game.splash("21+22 = " + answer)
+```
+```ts
+let answer = 0
+answer = 13 + 9 + 1 + 0 + 18 + 5
+game.splash("13+9+1+0+18+5=" + answer)
+/* longer equation */
+answer = 13 + 9 + 1 + 0 + 18 + 5 + 19 + 4 + 7
+game.showLongText("13 + 9 + 1 + 0 + 18 + 5 + 19 + 4 + 7 = " + answer, DialogLayout.Bottom)
+```
+
+### Task 2: Basic math operators with variables
+
+```ts
 let answer = 0
 let firstNumber = 0
 let secondNumber = 0
@@ -96,11 +158,11 @@ answer = firstNumber * secondNumber + thirdNumber
 game.splash("15 * 5 + 3 = " + answer)
 ```
 
-## Student Task 3: multiple operators and variables equation
+### Task 3:multiple operators and variables equation
 
-```blocks
-// https://makecode.com/_eC9Cwk3uXiCr
+#### Standard:
 
+```ts
 let answer = 0
 let firstNum = 0
 let secondNum = 0
@@ -114,9 +176,9 @@ answer = firstNum * secondNum + thirdNum / fourthNum
 game.splash("15 * 5 + 9 / 6 = " + answer)
 ```
 
-```blocks
-// Challenge:https://makecode.com/_WyA12wV0K74p
+#### Challenge:
 
+```ts
 let answer = 0
 let fifthNum = 0
 let fourthNum = 0
@@ -132,11 +194,9 @@ answer = firstNum * secondNum + thirdNum / fourthNum - fifthNum
 game.splash("15*5+9/6-10 = " + answer)
 ```
 
-## Student Task 4: Conversion
+### Task 4: Conversion
 
-```blocks
-// https://makecode.com/_A3PHiyg9rTD6
-
+```ts
 let tempF = 0
 let tempC = 0
 tempC = 22
@@ -148,11 +208,11 @@ tempC = (tempF - 32) * (5 / 9)
 game.splash("" + tempF + " F", "Celsius " + tempC)
 ```
 
-
 ## Student Task 5: Debugging
 
 1. Use ``||text:join||`` to show sprite
-```blocks
+
+```ts
 let c = 0
 let b = 0
 let a = 0
@@ -164,9 +224,7 @@ game.splash("" + c)
 
 2. Fix the output
 
-```blocks
-// https://makecode.com/_dm7i6WUHdKsh
-
+```ts
 let c = 0
 let b = 0
 let a = 0

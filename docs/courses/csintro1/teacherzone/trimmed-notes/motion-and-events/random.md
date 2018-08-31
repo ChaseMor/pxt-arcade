@@ -25,18 +25,6 @@ Repeat for smaller than 5 , down to zero.
 
 https://makecode.com/_ahtdT1UrfP95
 
-```blocks
-let positiveOrNegative = 0
-let anotherRandom = 0
-let randomNumber = 0
-randomNumber = Math.randomRange(1, 100)
-game.splash("1 to 100: " + randomNumber)
-anotherRandom = Math.randomRange(20, 30)
-game.splash("20 to 30: " + anotherRandom)
-positiveOrNegative = Math.randomRange(-10, 10)
-game.splash("-10 to 10: " + positiveOrNegative)
-```
-
 ## Concept: pick a random location
 
 ## Example #2: random sprite location 
@@ -147,7 +135,124 @@ positionX = Math.randomRange(0, widthX - 15)
 
 https://makecode.com/_9LvUTX7X5RJA
 
+## What did we learn? 
+
+1. Describe how the ability to generate a random value can make a game more interesting and/or challenging.
+2. What is a good use of random that you would like to design into a future game - especially something we don't know how to do yet. Be descriptive of the game and how random is needed.
+
+## Rubrics
+
+### Task Rubric
+
+|   | 5pts | 7pts | 9pts | 10pts |
+|:---:|:---:|:---:|:---:|:---:|
+| Pick Random | Completed at least 2 tasks | Completed all 3 tasks | Completed all 3 tasks well and at least 1 challenge | Completed all tasks & challenges |
+
+### Score = \_\_\_\_\_\_ /10 
+
+### What did we learn rubric 
+
+|   | 5pts | 7pts | 9pts | 10pts |
+|:---:|:---:|:---:|:---:|:---:|
+| Explanation | answered a questions but parts are unclear or lack detail | Explanations address all 2 questions fully | All answers have clear and useful explanations | Both answers have exceptional explanations using an original example and/or analogy |
+
+### Score = \_\_\_\_\_\_ /10 
+
+
+
+
+## Task Solution Appendix
+
+### Task 1: Create random number ranges
+
 ```blocks
+let positiveOrNegative = 0
+let anotherRandom = 0
+let randomNumber = 0
+randomNumber = Math.randomRange(1, 100)
+game.splash("1 to 100: " + randomNumber)
+anotherRandom = Math.randomRange(20, 30)
+game.splash("20 to 30: " + anotherRandom)
+positiveOrNegative = Math.randomRange(-10, 10)
+game.splash("-10 to 10: " + positiveOrNegative)
+```
+
+### Task 2: Set random position using a button event
+
+```ts
+enum SpriteKind {
+    Player,
+    Enemy
+}
+let hat: Sprite = null
+let mySprite: Sprite = null
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    mySprite.setPosition(Math.randomRange(15, 145), Math.randomRange(15, 105))
+    hat.setPosition(Math.randomRange(15, 145), Math.randomRange(15, 105))
+})
+controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
+    mySprite.vx = Math.randomRange(-10, 10)
+    mySprite.vy = Math.randomRange(-10, 10)
+})
+mySprite = sprites.create(img`
+. . . . . . . . . . . . . . . . 
+. . . 5 . . 5 . . 5 . . . . . . 
+. . . . 5 . 5 . 5 . . . . . . . 
+. . . . . 5 7 5 . . . . . . . . 
+. . . . 5 7 2 7 5 . . . . . . . 
+. . . . . 5 7 5 . . . . . . . . 
+. . . . . . 5 . . . . . . . . . 
+. . . . . . 1 . . . . . . . . . 
+. . 2 1 1 1 1 1 1 1 2 . . . . . 
+. . . . . . 1 . . . . . . . . . 
+. . . . . . 1 . . . . . . . . . 
+. . . . . . 1 . . . . . . . . . 
+. . . . . 1 . 1 . . . . . . . . 
+. . . . 7 . . . 7 . . . . . . . 
+. . . 7 . . . . . 7 . . . . . . 
+. . 2 2 . . . . . 2 2 . . . . . 
+`, SpriteKind.Player)
+hat = sprites.create(img`
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . 4 4 4 4 4 4 4 4 4 4 . . . . . . . . . . . . . . . 
+. . . . . . . 4 7 7 7 7 7 7 7 7 4 . . . . . . . . . . . . . . . 
+. . . . . . . 4 7 7 7 7 7 7 7 7 4 . . . . . . . . . . . . . . . 
+. . . . . . . 4 7 7 7 7 7 7 7 7 4 . . . . . . . . . . . . . . . 
+. . . . . . . 4 7 7 7 7 7 7 7 7 4 . . . . . . . . . . . . . . . 
+. . . . . . . 4 7 7 7 7 7 7 7 7 4 . . . . . . . . . . . . . . . 
+. . . . . . . 4 7 7 7 7 7 7 7 7 4 . . . . . . . . . . . . . . . 
+. . . . . . . 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 . . . . . . . 
+. . . . . . . 6 6 6 6 6 6 6 6 6 . . . . . . . . . . . . . . . . 
+. . . . . . . 6 6 6 6 6 6 6 6 6 . . . . . . . . . . . . . . . . 
+. . . . . . . 6 4 6 6 6 6 6 6 6 . . . . . . . . . . . . . . . . 
+. . . . . 6 6 6 6 6 6 6 6 6 6 6 . . . . . . . . . . . . . . . . 
+. . . . . 6 6 6 6 6 6 6 6 6 6 6 . . . . . . . . . . . . . . . . 
+. . . . . 6 6 6 6 6 6 6 6 6 6 6 . . . . . . . . . . . . . . . . 
+. . . . . . 6 6 6 6 6 6 6 6 6 6 . . . . . . . . . . . . . . . . 
+. . . . . . 6 6 6 6 6 6 6 6 6 6 . . . . . . . . . . . . . . . . 
+. . . . . . . 6 6 6 6 6 6 6 6 6 . . . . . . . . . . . . . . . . 
+. . . . . . 6 6 6 6 6 6 6 6 6 6 . . . . . . . . . . . . . . . . 
+. . . . . . 6 6 6 6 6 6 6 6 6 6 . . . . . . . . . . . . . . . . 
+. . . . . . 6 6 6 6 6 6 6 6 6 . . . . . . . . . . . . . . . . . 
+. . . . . . 6 6 6 6 6 6 6 6 6 . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+`, SpriteKind.Player)
+mySprite.setPosition(Math.randomRange(15, 145), Math.randomRange(15, 105))
+hat.setPosition(Math.randomRange(15, 145), Math.randomRange(15, 105))
+```
+
+### Task 3: Check for random overlap with many sprites
+
+```ts
 enum SpriteKind {
     Player,
     Enemy,
@@ -297,26 +402,3 @@ hat1.setPosition(Math.randomRange(15, 145), Math.randomRange(15, 105))
 hat2.setPosition(Math.randomRange(15, 145), Math.randomRange(15, 105))
 hat3.setPosition(Math.randomRange(15, 145), Math.randomRange(15, 105))
 ```
-
-## What did we learn? 
-
-1. Describe how the ability to generate a random value can make a game more interesting and/or challenging.
-2. What is a good use of random that you would like to design into a future game - especially something we don't know how to do yet. Be descriptive of the game and how random is needed.
-
-## Rubrics
-
-### Task Rubric
-
-|   | 5pts | 7pts | 9pts | 10pts |
-|:---:|:---:|:---:|:---:|:---:|
-| Pick Random | Completed at least 2 tasks | Completed all 3 tasks | Completed all 3 tasks well and at least 1 challenge | Completed all tasks & challenges |
-
-### Score = \_\_\_\_\_\_ /10 
-
-### What did we learn rubric 
-
-|   | 5pts | 7pts | 9pts | 10pts |
-|:---:|:---:|:---:|:---:|:---:|
-| Explanation | answered a questions but parts are unclear or lack detail | Explanations address all 2 questions fully | All answers have clear and useful explanations | Both answers have exceptional explanations using an original example and/or analogy |
-
-### Score = \_\_\_\_\_\_ /10 

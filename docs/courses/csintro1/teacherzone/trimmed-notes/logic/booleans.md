@@ -17,7 +17,37 @@ https://makecode.com/_975A7yazx1dT
 
 https://makecode.com/_UgDa7dFb8Aox
 
-```blocks
+### Challenge (Optional):
+3. **Challenge:** rather than use an ``||logic:if else||`` block, use the ``||logic:not||`` block to flip ``||isHungry||`` on and off
+
+### ~hint
+
+For the challenge: the ``||logic:not||`` block **negates** whatever value is passed to it - if you pass in ``||variables:value||`` with value set to false, it will become true, and if value is set to true, it will become false.
+
+### ~
+
+https://makecode.com/_JUceve65sPLW
+
+## Concept: ``||logic:and||`` & ``||logic:or||``
+
+## Example #2a: ``||logic:and||``
+
+## Example #2b: ``||logic:or||``
+
+## Student Task #2: 
+
+https://makecode.com/_48A0e9R3bTY8
+
+
+
+
+## Task Solution Appendix
+
+## Student Task #1: Off and on
+
+### Standard:
+
+```ts
 let isHungry = false
 controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
     if (isHungry) {
@@ -37,17 +67,9 @@ game.splash("Press A if you are hungry!")
 isHungry = false
 ```
 
-### Challenge (Optional):
-3. **Challenge:** rather than use an ``||logic:if else||`` block, use the ``||logic:not||`` block to flip ``||isHungry||`` on and off
+### Challenge:
 
-### ~hint
-
-For the challenge: the ``||logic:not||`` block **negates** whatever value is passed to it - if you pass in ``||variables:value||`` with value set to false, it will become true, and if value is set to true, it will become false.
-
-### ~
-https://makecode.com/_JUceve65sPLW
-
-```blocks
+```ts
 let isHungry = false
 controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
     if (isHungry) {
@@ -63,17 +85,9 @@ game.splash("Press A if you are hungry!")
 isHungry = false
 ```
 
-## Concept: ``||logic:and||`` & ``||logic:or||``
-
-## Example #2a: ``||logic:and||``
-
-## Example #2b: ``||logic:or||``
-
 ## Student Task #2: 
 
-https://makecode.com/_48A0e9R3bTY8
-
-```blocks
+```ts
 enum SpriteKind {
     Player,
     Enemy

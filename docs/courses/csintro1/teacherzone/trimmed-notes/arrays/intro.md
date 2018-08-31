@@ -11,12 +11,6 @@
 
 https://makecode.com/_W11d0LV2F3xE
 
-```blocks
-let list: number[] = []
-list = [1, 2, 3, 4, 5]
-game.splash("" + list[Math.randomRange(0, list.length - 1)])
-```
-
 ## What did we learn?
 
 1. What is the difference between creating an array of numbers and storing multiple values as individual variables (as in, `value1 = 1`, `value2 = 2`, `value3 ...`)? What can an array do that storing different variables by themselves cannot?
@@ -29,3 +23,15 @@ game.splash("" + list[Math.randomRange(0, list.length - 1)])
 2. The position of an element of an array starts at 0, but when counting the elements of an array, we start at 1. That is an array of size 5 will have elements in positions, 0, 1, 2, 3, and 4. So the ``||array:length||`` of an array will always be 1 greater the position of the final element.
 
 ### ~
+
+
+
+## Task Solution Appendix
+
+### Task #1: Random values from Arrays
+
+```ts
+let list: number[] = []
+list = [1, 2, 3, 4, 5]
+game.splash("" + list[Math.randomRange(0, list.length - 1)])
+```

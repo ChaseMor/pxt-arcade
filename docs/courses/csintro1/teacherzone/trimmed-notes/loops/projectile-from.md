@@ -81,3 +81,272 @@ Can there be overlapping another if either sprite is a ghost?
 3. Challenge: Sprites use computer resources (memory, processing)- if there are a lot of them they use a lot of resources. Ghost On uses less resources since not having to check if it overlapping.
 
 ### ~
+
+
+
+
+## Task Solution Appendix
+
+### Task 1: Throw a ball at a target
+
+```ts
+enum SpriteKind {
+    Player,
+    Enemy,
+    Target,
+    Ball
+}
+let mySprite: Sprite = null
+let ball: Sprite = null
+let targetVelocity = 0
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    ball = sprites.createProjectile(img`
+. . . . . . 7 7 
+. . . . . . 7 7 
+. . . . . . . . 
+. . . . . . . . 
+. . . . . . . . 
+. . . . . . . . 
+. . . . . . . . 
+. . . . . . . . 
+`, -50, 0, SpriteKind.Ball, mySprite)
+    pause(200)
+})
+targetVelocity = 20
+mySprite = sprites.create(img`
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . e e e e . . 7 7 . . 
+. . . . . . e d d e . . 7 9 . . 
+. . . . . . e d d e . . 4 . . . 
+. . . . . . . d d . 4 4 . . . . 
+. . . . . . 4 5 5 4 4 . . . . . 
+. . . . . 4 4 4 4 . . . . . . . 
+. . . 9 4 4 . 4 4 . . . . . . . 
+. . . . . . . 4 4 . . . . . . . 
+. . . . . . . 3 3 . . . . . . . 
+. . . . . . 3 3 3 . . . . . . . 
+. . . . . 3 3 . 3 3 . . . . . . 
+. . . . . 3 . . . 3 3 . . . . . 
+. . . . . 3 . . . . 3 . . . . . 
+. . . . 1 1 . . . 1 1 . . . . . 
+`, SpriteKind.Player)
+mySprite.setPosition(145, 60)
+```
+
+#### CHallenge
+
+```ts
+enum SpriteKind {
+    Player,
+    Enemy,
+    Target,
+    Ball
+}
+let mySprite: Sprite = null
+let ball: Sprite = null
+let target: Sprite = null
+let targetVelocity = 0
+sprites.onOverlap(SpriteKind.Ball, SpriteKind.Target, function (sprite, otherSprite) {
+    info.changeScoreBy(1)
+    sprite.destroy()
+})
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    ball = sprites.createProjectile(img`
+. . . . . . 7 7 
+. . . . . . 7 7 
+. . . . . . . . 
+. . . . . . . . 
+. . . . . . . . 
+. . . . . . . . 
+. . . . . . . . 
+. . . . . . . . 
+`, -50, 0, SpriteKind.Ball, mySprite)
+    pause(200)
+})
+targetVelocity = 20
+mySprite = sprites.create(img`
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . e e e e . . 7 7 . . 
+. . . . . . e d d e . . 7 9 . . 
+. . . . . . e d d e . . 4 . . . 
+. . . . . . . d d . 4 4 . . . . 
+. . . . . . 4 5 5 4 4 . . . . . 
+. . . . . 4 4 4 4 . . . . . . . 
+. . . 9 4 4 . 4 4 . . . . . . . 
+. . . . . . . 4 4 . . . . . . . 
+. . . . . . . 3 3 . . . . . . . 
+. . . . . . 3 3 3 . . . . . . . 
+. . . . . 3 3 . 3 3 . . . . . . 
+. . . . . 3 . . . 3 3 . . . . . 
+. . . . . 3 . . . . 3 . . . . . 
+. . . . 1 1 . . . 1 1 . . . . . 
+`, SpriteKind.Player)
+controller.controlSprite(mySprite, 0, 100)
+mySprite.setPosition(145, 60)
+info.startCountdown(10)
+game.onUpdateInterval(1000, function () {
+    target = sprites.createProjectile(img`
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . 1 1 1 1 1 1 1 1 1 1 1 . . . 
+. . 1 1 1 1 1 1 1 1 1 1 1 . . . 
+. . 1 1 1 2 2 2 2 2 1 1 1 . . . 
+. . 1 1 1 2 2 2 2 2 1 1 1 . . . 
+. . 1 1 1 2 2 2 2 2 1 1 1 . . . 
+. . 1 1 1 2 2 2 2 2 1 1 1 . . . 
+. . 1 1 1 1 1 1 1 1 1 1 1 . . . 
+. . 1 1 1 1 1 1 1 1 1 1 1 . . . 
+. . 1 1 1 1 1 1 1 1 1 1 1 . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`, 0, 20, SpriteKind.Target)
+    target.x = 5
+})
+```
+
+### Task 2: Projectile from Projectile
+
+```ts
+enum SpriteKind {
+    Player,
+    Enemy,
+    bubble
+}
+let bubble: Sprite = null
+let whale: Sprite = null
+sprites.onDestroyed(SpriteKind.Player, function (sprite) {
+    game.over(true)
+})
+whale = sprites.createProjectile(img`
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . d d c d d . . . . . . . . . . . 
+d . . . . . . . . . . . . . . d d d d d d d d d . . . . . . . . 
+d d d d . . d d d . . . . . d d d d d d d d d d d d . . . . . . 
+d d d d . . d d d d . . . d d d d d d d d d d d d d d . . . . . 
+d d d d . d d d d d . . . d d d d d d d d d d d d d d d d d . . 
+d d d d d d d d d . . . d d d d d d d d d d d d d d d d d d . . 
+. d d d d d d d . . . . d d d d d d d d d d d d d d c c c d d . 
+. . d d d d d . . . . . d d d d d d d d d d d d d d c 1 1 d d d 
+. . d d d d . . . . . d d d d d d d d d d d d d d d d 1 9 d d d 
+. d d d . . . . . . d d d d d d d d d d d d d d d d d d d d d d 
+d d d d . . . . d d d d d d d d d d d d d d d d d d d d d d d d 
+d d d d . . . d d d d d d d d d d d d d d d d d d d d d d d d d 
+d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d 
+d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d 
+d d d d d d d d d d d d d d d d d d d d d d d d d d f f f f f d 
+d d d d d d d d d d d d d d d d d d d d d d d d d d f 1 1 1 1 . 
+. d d d d d d d d d d d d d d d d d d d d d d d d d f f 1 1 . . 
+. . d d d d d d d d d d d d d d d d d d d d d d d d d . . . . . 
+`, 25, 0, SpriteKind.Player)
+whale.y = 100
+game.onUpdateInterval(500, function () {
+    bubble = sprites.createProjectile(img`
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . 9 9 . . . . . . . . 
+. . . . . 9 1 9 9 . . . . . . . 
+. . . . 9 9 9 9 9 9 . . . . . . 
+. . . . 9 9 9 9 9 9 . . . . . . 
+. . . . . 9 9 9 9 . . . . . . . 
+. . . . . . 9 9 . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`, 0, -40, SpriteKind.bubble, whale)
+    bubble.setFlag(SpriteFlag.Ghost, true)
+})
+```
+
+#### Challenge
+
+```ts
+enum SpriteKind {
+    Player,
+    Enemy,
+    bubble
+}
+let bubble: Sprite = null
+let whale: Sprite = null
+sprites.onDestroyed(SpriteKind.Player, function (sprite) {
+    game.over(true)
+})
+whale = sprites.createProjectile(img`
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . d d c d d . . . . . . . . . . . 
+d . . . . . . . . . . . . . . d d d d d d d d d . . . . . . . . 
+d d d d . . d d d . . . . . d d d d d d d d d d d d . . . . . . 
+d d d d . . d d d d . . . d d d d d d d d d d d d d d . . . . . 
+d d d d . d d d d d . . . d d d d d d d d d d d d d d d d d . . 
+d d d d d d d d d . . . d d d d d d d d d d d d d d d d d d . . 
+. d d d d d d d . . . . d d d d d d d d d d d d d d c c c d d . 
+. . d d d d d . . . . . d d d d d d d d d d d d d d c 1 1 d d d 
+. . d d d d . . . . . d d d d d d d d d d d d d d d d 1 9 d d d 
+. d d d . . . . . . d d d d d d d d d d d d d d d d d d d d d d 
+d d d d . . . . d d d d d d d d d d d d d d d d d d d d d d d d 
+d d d d . . . d d d d d d d d d d d d d d d d d d d d d d d d d 
+d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d 
+d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d 
+d d d d d d d d d d d d d d d d d d d d d d d d d d f f f f f d 
+d d d d d d d d d d d d d d d d d d d d d d d d d d f 1 1 1 1 . 
+. d d d d d d d d d d d d d d d d d d d d d d d d d f f 1 1 . . 
+. . d d d d d d d d d d d d d d d d d d d d d d d d d . . . . . 
+`, 25, 0, SpriteKind.Player)
+whale.y = 100
+game.onUpdateInterval(500, function () {
+    bubble = sprites.createProjectile(img`
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . 9 9 . . . . . . . . 
+. . . . . 9 1 9 9 . . . . . . . 
+. . . . 9 9 9 9 9 9 . . . . . . 
+. . . . 9 9 9 9 9 9 . . . . . . 
+. . . . . 9 9 9 9 . . . . . . . 
+. . . . . . 9 9 . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`, Math.randomRange(-10, 35), -40, SpriteKind.bubble, whale)
+    bubble.setFlag(SpriteFlag.Ghost, true)
+})
+```
