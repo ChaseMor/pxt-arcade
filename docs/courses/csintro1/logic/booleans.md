@@ -170,20 +170,17 @@ game.onUpdateInterval(500, function () {
 })
 ```
 
-
 1. Review the code example above
 2. Examine its use of the ``||logic:not||`` block
 3. Notice how the ``||logic:not||`` block is used to alternate the value of the Boolean ``||variables:left||``
 
-
-### Student Task #3: Alternating Booleans
+## Student Task #3: Alternating Booleans
 
 1. Create a new project
 2. Add create a new ``||sprites:sprite||``
 3. Create a new Boolean ``||variables:pizza||`` and set it equal to ``||logic:true||``
 4. Make this Boolean alternate values when the player presses the ``||controller:B||`` button
 5. When the player presses the ``||controller:A||``, if ``||variables:pizza||`` is ``||logic:true||``, then fire a pizza ``||sprites:projectile||``, otherwise fire a burger ``||sprites:projectile||``
-
 
 ## Concept: ``||logic:and||`` & ``||logic:or||``
 
