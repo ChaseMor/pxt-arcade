@@ -236,8 +236,8 @@ else                game.splash("false or false is false")
 
 1. Create a new project
 2. Create a sprite, and use ``||controller:control sprite with||`` to make it move when the directional keys are pressed
-3. In the ``||game:on game update||`` block, add an ``||logic:if||`` statement that makes the sprite ``||sprites:say||`` "hello" for 200 ms. Use ``||logic:and||`` to make this happen when the ``||sprites:sprite x||`` **and** ``||sprites:sprite y||`` values are both less than 30
-4. In the ``||game:on game update||`` block, add another ``||logic:if||`` statement that makes the sprite ``|sprites:say||`` "bye" for 200 ms when the ``||sprites:sprite x||`` **or** the ``||sprites:sprite y||`` is greater than 80
+3. In the ``||game:on game update||`` block, add an ``||logic:if||`` statement that makes the sprite ``||sprites:say||`` "hello" for 200 milliseconds when the ``||sprites:sprite x||`` value is less than 30 ``||logic:and||`` ``||sprites:sprite y||`` is less than 30.
+4. In the ``||game:on game update||`` block, add another ``||logic:if||`` statement that makes the sprite ``|sprites:say||`` "bye" for 200 ms when the ``||sprites:sprite x||`` is greater than 80 ``||logic:or||`` the ``||sprites:sprite y||`` is greater than 80
 5. **Challenge**: Create the same behavior while using one or more ``||logic:not||`` blocks
 
 ## What did we learn?
