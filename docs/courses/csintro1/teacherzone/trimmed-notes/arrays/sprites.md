@@ -3,10 +3,10 @@
 ## Student Task #1: Moving a random asteroid
 
 1. Start with the code from example #1
-2. Instead of moving every asteroid, use ``||math:random item from||`` to select a random asteroid from ``||variables:my sprite array||`` and move only that asteroid when the ``||controller:A||`` button is pressed
+2. Instead of moving every asteroid, select a random asteroid from ``||variables:my sprite array||`` and move only that asteroid when the ``||controller:A||`` button is pressed
 3. **Challenge:** choose another random asteroid, and have it ``||sprites:say||`` "woosh" for 300 ms. Are the two randomly chosen asteroids the same? (Can they be the same?)
 
-https://makecode.com/_7UDR7Y0YT4vb
+https://makecode.com/_XjECpqX0eRdh
 
 
 ## Student Task #2: Bigger and Better Fireworks
@@ -15,10 +15,10 @@ https://makecode.com/_7UDR7Y0YT4vb
 2. Add a ``||loops:repeat||`` loop in the ``||loops:on start||`` that will create 100 fireworks (hint: make sure to surround all three blocks in the ``||loops:on start||``, to maintain the same behavior for all fireworks)
 3. Use ``||sprites:array of sprites of kind||`` block to get an array of all the fireworks in the ``||controller:on any button pressed||`` event, and store it in the variable ``||variables:sprite list||``
 4. Add an ``||logic:if||`` condition around the rest of the ``||controller:on any button pressed||``, so that the rest of the event only occurs if the ``||arrays:length of array sprite list||`` is greater than 0
-5. Use ``||math:random item from||`` to select a firework from ``||variables:sprite list||`` at random, and store that in the variable ``||variables:origin||``. Replace all references to ``||variables:firework||`` in the event to refer to this new variable
+5. Select a firework from ``||variables:sprite list||`` at random, and store that in the variable ``||variables:origin||``. Replace all references to ``||variables:firework||`` in the event to refer to this new variable
 6. **Challenge:** change the ``||controller:on any button pressed||`` event to only trigger when the ``||controller:A||`` button is pressed, and make a ``||controller:on B button pressed||`` event that will create a new firework. Make sure to use either a ``||functions:function||`` or an ``||sprites:on created sprite of kind||`` event to reduce the redundancy between the new event and the ``||loops:on start||`` block
 
-https://makecode.com/_86j13pYseL03
+https://makecode.com/_LKd4yMYVCHvD
 
 
 
@@ -61,7 +61,7 @@ enum SpriteKind {
 }
 let my_sprite_array: Sprite[] = []
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    Math.pickRandom(my_sprite_array).setPosition(Math.randomRange(0, scene.screenWidth()), Math.randomRange(0, scene.screenHeight()))
+    my_sprite_array[Math.randomRange(0, my_sprite_array.length - 1)].setPosition(Math.randomRange(0, scene.screenWidth()), Math.randomRange(0, scene.screenHeight()))
 })
 my_sprite_array = [sprites.create(img`
 . . . . . . . . . c c 8 . . . . 
@@ -131,7 +131,7 @@ let sprite_list: Sprite[] = []
 controller.anyButton.onEvent(ControllerButtonEvent.Pressed, function () {
     sprite_list = sprites.allOfKind(SpriteKind.Firework)
     if (sprite_list.length > 0) {
-        origin = Math.pickRandom(sprite_list)
+        origin = sprite_list[Math.randomRange(0, sprite_list.length)]
         for (let i = 0; i < 30; i++) {
             let projectile = sprites.createProjectile(img`
 1 

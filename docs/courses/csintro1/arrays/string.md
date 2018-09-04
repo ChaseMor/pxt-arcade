@@ -102,7 +102,7 @@ enum SpriteKind {
 let text_list: string[] = []
 let mySprite: Sprite = null
 scene.onHitTile(SpriteKind.Player, 15, function (sprite) {
-    mySprite.say(Math.pickRandom(text_list), 250)
+    mySprite.say(text_list[Math.randomRange(0, text_list.length - 1)], 250)
     mySprite.setPosition(50, 50)
 })
 scene.setTileMap(img`

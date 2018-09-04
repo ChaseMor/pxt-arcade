@@ -13,7 +13,6 @@ In this activity, students will:
 * Create arrays of numbers
 * ``||array:length of array||``
 * ``||array:add||`` and ``||array:remove||`` values from arrays
-* ``||math:random item from||``
 
 ## Coming Soon: VIDEO
 
@@ -86,7 +85,7 @@ In this example, we added 5 to the end of the array, after it's already been cre
 2. Create a ``||controller:on A button press||`` event
 3. Inside the ``||controller:on A button press||`` event, use ``||array:list add value to end||`` to append a random number using ``||math:pick random -10 to 10||``
 4. Create a ``||controller: on B button press||`` event
-5. Inside the ``||controller: on B button press||`` event, use ``||math:random item from||`` to select a random item from the ``||variables:list||`` and ``||game:splash||`` it
+5. Inside the ``||controller: on B button press||`` event, select a random item from the ``||variables:list||`` and ``||game:splash||`` it
 
 ### ~hint
 
