@@ -50,9 +50,9 @@ In this example, ``||variables:isHungry||`` is a flag that will change the behav
 2. Modify the ``||controller:on A button pressed||`` event so that it **switches** the value of ``||variables:isHungry||`` from ``||logic:true||`` to ``||logic:false||`` or from ``||logic:false||`` to ``||logic:true||``, by using an ``||logic:if else||`` block
 
 ## Concept: ``||logic:not||``
-When we have a boolean value, we have seen that we can write code that runs when it is true using a simple ``||logic:if||`` statement. However, we can also run code for when the boolean is false. This is done with the ``||logic:not||`` block.
+When we have a Boolean value, we have seen that we can write code that runs when it is true using a simple ``||logic:if||`` statement. However, we can also run code for when the Boolean is false. This is done with the ``||logic:not||`` block.
 
-## Example #2
+## Example #2: ``||logic:not||``
 
 https://makecode.com/_Ug9eu36KRW2o
 
@@ -97,9 +97,9 @@ game.onUpdateInterval(5000, function () {
 
 1. Review the code example above
 2. Examine its use of the ``||logic:not||`` block
-3. Notice how the ``||sprites:sprite||`` will only say something if the boolean is *not* ``||logic:true||``
+3. Notice how the ``||sprites:sprite||`` will only say something if the Boolean is *not* ``||logic:true||``
 
-## Student Task #2
+## Student Task #2: ``||logic:not||``
 
 1. Start a new project
 2. Create a ``||sprites:sprite||`` and use the ``||controller:control with||`` block to move the sprite around the screen
@@ -108,12 +108,12 @@ game.onUpdateInterval(5000, function () {
 5. Make it so that if the player presses the ``||controller:A||`` button, if ``||variables:isLeft||`` is ``||logic:false||``, then the sprite should ``||sprites:say||`` something
 
 
-## Concept: Alternating booleans
+## Concept: Alternating Booleans
 
-We can also use the ``||logic:not||`` block when assigning a boolean. So if we wanted to, we could assign a boolean to be the opposite of another boolean. Or, what might be more useful is to set a boolean to the opposite value of itself
+We can also use the ``||logic:not||`` block when assigning a Boolean. So if we wanted to, we could assign a Boolean to be the opposite of another Boolean. Or, what might be more useful is to set a Boolean to the opposite value of itself
 
 
-## Example #3
+## Example #3: Alternating Booleans
 
 ```blocks
 enum SpriteKind {
@@ -173,21 +173,21 @@ game.onUpdateInterval(500, function () {
 
 1. Review the code example above
 2. Examine its use of the ``||logic:not||`` block
-3. Notice how the ``||logic:not||`` block is used to alternate the value of the boolean ``||variables:left||``
+3. Notice how the ``||logic:not||`` block is used to alternate the value of the Boolean ``||variables:left||``
 
 
-### Student Task #3
+### Student Task #3: Alternating Booleans
 
 1. Create a new project
 2. Add create a new ``||sprites:sprite||``
-3. Create a new boolean ``||variables:pizza||`` and set it equal to ``||logic:true||``
-4. Make this boolean alternate values when the player presses the ``||controller:B||`` button
+3. Create a new Boolean ``||variables:pizza||`` and set it equal to ``||logic:true||``
+4. Make this Boolean alternate values when the player presses the ``||controller:B||`` button
 5. When the player presses the ``||controller:A||``, if ``||variables:pizza||`` is ``||logic:true||``, then fire a pizza ``||sprites:projectile||``, otherwise fire a burger ``||sprites:projectile||``
 
 
 ## Concept: ``||logic:and||`` & ``||logic:or||``
 
-Beyond just using a single Boolean value, there are several ways in which we can combine these values. The most commonly used are ``||logic:and||`` and ``||logic:or||``. These are very similar to the definition in plain english; for example, the statement
+Beyond just using a single Boolean value, there are several ways in which we can combine these values. The most commonly used are ``||logic:and||`` and ``||logic:or||``. These are used similarly to the the use in English language; for example, the statement
 
 > If I have food and I am hungry, I will make lunch
 
@@ -243,10 +243,9 @@ else                game.splash("false or false is false")
 4. In the ``||game:on game update||`` block, add another ``||logic:if||`` statement that makes the sprite ``|sprites:say||`` "bye" for 200 ms when the ``||sprites:sprite x||`` **or** the ``||sprites:sprite y||`` is greater than 80
 5. **Challenge**: Create the same behavior while using one or more ``||logic:not||`` blocks
 
-
 ## What did we learn?
 
-1. What is a boolean flag? Describe a case in which you might you want to use one?
+1. What is a Boolean flag? Describe a case in which you might you want to use one?
 2. What is the difference between an ``||logic:and||`` block and an ``||logic:or||`` block?
     * In what cases will they both evaluate to true?
     * In what cases will they both evaluate to false?
