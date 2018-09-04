@@ -38,46 +38,6 @@ https://makecode.com/_TPkiUf3gxJkM
 
 https://makecode.com/_5fm9mgdA5gry
 
-```blocks
-enum SpriteKind {
-    Player,
-    Enemy
-}
-let isLeft = false
-let mySprite: Sprite = null
-controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    if (!(isLeft)) {
-        mySprite.say("I'm on the right", 3000)
-    }
-})
-mySprite = sprites.create(img`
-. . . . . . 5 . 5 . . . . . . . 
-. . . . . f 5 5 5 f f . . . . . 
-. . . . f 1 5 2 5 1 6 f . . . . 
-. . . f 1 6 6 6 6 6 1 6 f . . . 
-. . . f 6 6 f f f f 6 1 f . . . 
-. . . f 6 f f d d f f 6 f . . . 
-. . f 6 f d f d d f d f 6 f . . 
-. . f 6 f d 3 d d 3 d f 6 f . . 
-. . f 6 6 f d d d d f 6 6 f . . 
-. f 6 6 f 3 f f f f 3 f 6 6 f . 
-. . f f d 3 5 3 3 5 3 d f f . . 
-. . f d d f 3 5 5 3 f d d f . . 
-. . . f f 3 3 3 3 3 3 f f . . . 
-. . . f 3 3 5 3 3 5 3 3 f . . . 
-. . . f f f f f f f f f f . . . 
-. . . . . f f . . f f . . . . . 
-`, SpriteKind.Player)
-controller.controlSprite(mySprite, 100, 100)
-isLeft = false
-game.onUpdate(function () {
-    if (mySprite.x < scene.screenWidth() / 2) {
-        isLeft = true
-    } else {
-        isLeft = false
-    }
-})
-```
 ## Concept: Alternating booleans
 
 ## Example #3:
@@ -88,80 +48,6 @@ https://makecode.com/_fm30qcV0FKzH
 
 https://makecode.com/_FD55cagwP32v
 
-```blocks
-enum SpriteKind {
-    Player,
-    Enemy,
-    Food
-}
-let projectile: Sprite = null
-let pizza = false
-let mySprite: Sprite = null
-controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
-    pizza = !(pizza)
-})
-controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    if (pizza) {
-        projectile = sprites.createProjectile(img`
-. . . . . . b b b b . . . . . . 
-. . . . . . b 4 4 4 b . . . . . 
-. . . . . . b b 4 4 4 b . . . . 
-. . . . . b 4 b b b 4 4 b . . . 
-. . . . b d 5 5 5 4 b 4 4 b . . 
-. . . . b 3 2 3 5 5 4 e 4 4 b . 
-. . . b d 2 2 2 5 7 5 4 e 4 4 e 
-. . . b 5 3 2 3 5 5 5 5 e e e e 
-. . b d 7 5 5 5 3 2 3 5 5 e e e 
-. . b 5 5 5 5 5 2 2 2 5 5 d e e 
-. b 3 2 3 5 7 5 3 2 3 5 d d e 4 
-. b 2 2 2 5 5 5 5 5 5 d d e 4 . 
-b d 3 2 d 5 5 5 d d d 4 4 . . . 
-b 5 5 5 5 d d 4 4 4 4 . . . . . 
-4 d d d 4 4 4 . . . . . . . . . 
-4 4 4 4 . . . . . . . . . . . . 
-`, 100, 0, SpriteKind.Food, mySprite)
-    } else {
-        projectile = sprites.createProjectile(img`
-. . . . c c c b b b b b . . . . 
-. . c c b 4 4 4 4 4 4 b b b . . 
-. c c 4 4 4 4 4 5 4 4 4 4 b c . 
-. e 4 4 4 4 4 4 4 4 4 5 4 4 e . 
-e b 4 5 4 4 5 4 4 4 4 4 4 4 b c 
-e b 4 4 4 4 4 4 4 4 4 4 5 4 4 e 
-e b b 4 4 4 4 4 4 4 4 4 4 4 b e 
-. e b 4 4 4 4 4 5 4 4 4 4 b e . 
-8 7 e e b 4 4 4 4 4 4 b e e 6 8 
-8 7 2 e e e e e e e e e e 2 7 8 
-e 6 6 2 2 2 2 2 2 2 2 2 2 6 c e 
-e c 6 7 6 6 7 7 7 6 6 7 6 c c e 
-e b e 8 8 c c 8 8 c c c 8 e b e 
-e e b e c c e e e e e c e b e e 
-. e e b b 4 4 4 4 4 4 4 4 e e . 
-. . . c c c c c e e e e e . . . 
-`, 0, 100, SpriteKind.Food, mySprite)
-    }
-})
-mySprite = sprites.create(img`
-. . . . . . 5 . 5 . . . . . . . 
-. . . . . f 5 5 5 f f . . . . . 
-. . . . f 1 5 2 5 1 6 f . . . . 
-. . . f 1 6 6 6 6 6 1 6 f . . . 
-. . . f 6 6 f f f f 6 1 f . . . 
-. . . f 6 f f d d f f 6 f . . . 
-. . f 6 f d f d d f d f 6 f . . 
-. . f 6 f d 3 d d 3 d f 6 f . . 
-. . f 6 6 f d d d d f 6 6 f . . 
-. f 6 6 f 3 f f f f 3 f 6 6 f . 
-. . f f d 3 5 3 3 5 3 d f f . . 
-. . f d d f 3 5 5 3 f d d f . . 
-. . . f f 3 3 3 3 3 3 f f . . . 
-. . . f 3 3 5 3 3 5 3 3 f . . . 
-. . . f f f f f f f f f f . . . 
-. . . . . f f . . f f . . . . . 
-`, SpriteKind.Player)
-pizza = true
-```
-
 ## Concept: ``||logic:and||`` & ``||logic:or||``
 
 ## Example #4a: ``||logic:and||``
@@ -171,42 +57,6 @@ pizza = true
 ## Student Task #4: 
 
 https://makecode.com/_48A0e9R3bTY8
-
-
-```blocks
-enum SpriteKind {
-    Player,
-    Enemy
-}
-let mySprite: Sprite = null
-mySprite = sprites.create(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . 3 3 3 3 3 . 3 3 3 3 . . . 
-. . . 3 . . . . . . . . . 3 . . 
-. . . 3 . . . . . . . . . . 3 . 
-. . . . . . . . . . . . . . . . 
-1 . . 3 . . . . . . . . . . . . 
-. . . 3 . . . . . . . . . . . . 
-. . . 3 . . . . . . . . . . . . 
-. . . 3 . . . . . . . . . . 3 3 
-. . . 3 3 . 3 . . 3 . . 3 . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-`, SpriteKind.Player)
-controller.controlSprite(mySprite, 100, 100)
-game.onUpdate(function () {
-    if (mySprite.x < 30 && mySprite.y < 30) {
-        mySprite.say("hello", 200)
-    }
-    if (mySprite.x > 80 || mySprite.y > 80) {
-        mySprite.say("bye", 200)
-    }
-})
-```
 
 ## What did we learn?
 
@@ -328,6 +178,9 @@ game.onUpdate(function () {
     }
 })
 ```
+
+
+## Student Task #3:
 
 ```ts
 blocks
