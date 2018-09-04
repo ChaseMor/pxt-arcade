@@ -154,3 +154,40 @@ b 5 5 5 5 d d 4 4 4 4 . . . . .
     enemy.y = Math.randomRange(0, scene.screenHeight())
 })
 ```
+
+## Topics introduced by each section:
+
+### Sprites
+* Sprites
+* Say/Splash
+* Controller
+* User Input
+
+### Motion
+* Velocity
+* Projectiles
+* Overlaps events
+* On Create/On Destroy Events
+
+### Loops
+* Repeat loops
+* For index loops
+
+### Functions
+* Functions
+* Extensions
+
+### Tilemaps
+* Walls/Obstacles
+
+### Logic
+* If and else
+* Boolean flags
+* While loops
+* And/Or
+
+### Arrays
+* Arrays in general
+* Number Arrays
+* Sprite Arrays
+* Tile Arrays
