@@ -55,7 +55,7 @@ corgio=github:jwunderl/pxt-corgio#v0.0.12
 ### ~
 
 
-https://makecode.com/_1u627X797AVf
+https://makecode.com/_E7YfsC9kRRhm
 
 
 ## What did we learn?
@@ -160,14 +160,13 @@ let pizza: Sprite = null
 let enemyScript: string[] = []
 let text_list: string[] = []
 let mySprite: Sprite = null
-let sprite: Sprite = null
 scene.onHitTile(SpriteKind.Player, 15, function (sprite) {
-    mySprite.say(Math.pickRandom(text_list), 250)
+    mySprite.say(text_list[Math.randomRange(0, text_list.length - 1)], 250)
     mySprite.setPosition(50, 50)
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
     info.changeLifeBy(-1)
-    otherSprite.say(Math.pickRandom(enemyScript), 1000)
+    otherSprite.say(enemyScript[Math.randomRange(0, enemyScript.length - 1)], 1000)
     otherSprite.setFlag(SpriteFlag.Ghost, true)
     pause(1000)
     otherSprite.setFlag(SpriteFlag.Ghost, false)

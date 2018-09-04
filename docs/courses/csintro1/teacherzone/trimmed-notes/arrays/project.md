@@ -100,7 +100,7 @@ game.onUpdate(function () {
 })
 ```
 
-## [Example #2: Hazards ](https://makecode.com/_cAPX0q3uUeAL)
+## [Example #2: Hazards ](https://makecode.com/_TWiWPpFDo5jF)
 
 ```blocks
 enum SpriteKind {
@@ -113,7 +113,7 @@ let expressionArray: string[] = []
 let spriteArray: Sprite[] = []
 let textToSay = ""
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Hazard, function (sprite, otherSprite) {
-    textToSay = Math.pickRandom(expressionArray)
+    textToSay = expressionArray[Math.randomRange(0, expressionArray.length - 1)]
     if (otherSprite == spriteArray[0]) {
         textToSay = "" + textToSay + " That's Hot!"
     } else if (otherSprite == spriteArray[1]) {
