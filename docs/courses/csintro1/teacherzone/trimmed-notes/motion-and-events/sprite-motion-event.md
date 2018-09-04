@@ -18,8 +18,73 @@ In these activities, the student will use:
 
 https://makecode.com/_Jt9cW5EPtXjK
 
-```blocks
+## Sprite Motion Velocity
 
+## Example 2: increment velocity left and right 
+
+## Student Task #2: Increment Velocity Up and Down 
+
+https://makecode.com/_RoXXC4aogHr1
+
+## Motion - short dx/dy code method
+
+## Example 3: motion short dx/dy code method 
+
+## Student Task #3: Create Velocity Motion (short method)
+
+https://makecode.com/_TEmAxDimtac8
+
+## Flip Image 
+
+## Example 4: Image Flip with button press event
+
+# Student Task 4: Image Flip with motion
+
+https://makecode.com/_Rhd3AxLzc71c
+
+## What did we learn? 
+
+1. Describe how events can be used to run code using an example.
+2. Describe the difference between changing position and changing velocity.
+3. **Challenge:** in using flip, the sprite is **not** flipped. What is flipped? Explain how you know.
+
+### ~hint
+
+### Possible Solutions:
+
+1. An event will run code when that event happens. Example, the code placed inside the ``||controller:on A button press||`` block will run when the ``||controller:A||`` button is pressed
+2. Changing the position will change the location of the sprite just once. Changing the velocity will cause the sprite to be constantly changing its location
+3. **Challenge:** the image is flipped. We can change the sprite's image to something else and that image will not appear to be flipped
+
+###
+
+
+## Rubrics
+
+### Motion event tasks rubric
+
+|   | 5pts | 7pts | 9pts | 10pts |
+|:---:|:---:|:---:|:---:|:---:|
+| Motion Event | Completed 3 or more Tasks| Completed all 4 tasks properly | Completed all tasks and 1 or more challenges | Completed all tasks and challenge Code |
+
+### Score = \_\_\_\_\_\_ /10 
+
+### What did we learn rubric 
+
+|   | 5pts | 7pts | 9pts | 10pts |
+|:---:|:---:|:---:|:---:|:---:|
+| Explanation | Answered at least 2 questions fully or answered all 3 questions but parts are unclear or lack detail | Explanations address all 3 questions fully | All answers have clear explanations | Has an exceptional explanation using an original example and/or analogy |
+
+### Score = \_\_\_\_\_\_ /10 
+
+
+
+
+## Task Solution Appendix
+
+### Task 1: Increment position Y-axis (up and down) 
+
+```ts
 enum SpriteKind {
     Player,
     Enemy
@@ -64,15 +129,9 @@ mySprite = sprites.create(img`
 `, SpriteKind.Player)
 ```
 
-## Sprite Motion Velocity
+### Task 2: Increment Velocity Up and Down 
 
-## Example 2: increment velocity left and right 
-
-## Student Task #2: Increment Velocity Up and Down 
-
-https://makecode.com/_RoXXC4aogHr1
-
-```blocks
+```ts
 
 enum SpriteKind {
     Player,
@@ -119,16 +178,9 @@ mySprite = sprites.create(img`
 `, SpriteKind.Enemy)
 ```
 
+### Task 3: Create Velocity Motion (short method)
 
-## Motion - short dx/dy code method
-
-## Example 3: motion short dx/dy code method 
-
-## Student Task #3: Create Velocity Motion (short method)
-
-https://makecode.com/_TEmAxDimtac8
-
-```blocks
+```ts
 enum SpriteKind {
     Player,
     Enemy
@@ -185,15 +237,9 @@ game.onUpdate(function () {
 })
 ```
 
-## Flip Image 
+### Task 4: Image Flip with motion
 
-## Example 4: Image Flip with button press event
-
-# Student Task 4: Image Flip with motion
-
-https://makecode.com/_Rhd3AxLzc71c
-
-```blocks
+```ts
 
 enum SpriteKind {
     Player,
@@ -255,40 +301,4 @@ game.onUpdate(function () {
     mySprite.x += controller.dx()
     mySprite.y += controller.dy()
 })
-
 ```
-
-## What did we learn? 
-
-1. Describe how events can be used to run code using an example.
-2. Describe the difference between changing position and changing velocity.
-3. **Challenge** In using flip, the sprite is **not** flipped. What is flipped? Explain how you know.
-
-### ~hint
-
-### Possible Solutions:
-
-1. An event will run code when that event happens. Example, the code placed inside the ``||controller:on A button press||`` block will run when the ``||controller:A||`` button is pressed
-2. Changing the position will change the location of the sprite just once. Changing the velocity will cause the sprite to be constantly changing its location
-3. **Challenge** The image is flipped. We can change the sprite's image to something else and that image will not appear to be flipped
-
-###
-
-
-## Rubrics
-
-### Motion event tasks rubric
-
-|   | 5pts | 7pts | 9pts | 10pts |
-|:---:|:---:|:---:|:---:|:---:|
-| Motion Event | Completed 3 or more Tasks| Completed all 4 tasks properly | Completed all tasks and 1 or more challenges | Completed all tasks and challenge Code |
-
-### Score = \_\_\_\_\_\_ /10 
-
-### What did we learn rubric 
-
-|   | 5pts | 7pts | 9pts | 10pts |
-|:---:|:---:|:---:|:---:|:---:|
-| Explanation | Answered at least 2 questions fully or answered all 3 questions but parts are unclear or lack detail | Explanations address all 3 questions fully | All answers have clear explanations | Has an exceptional explanation using an original example and/or analogy |
-
-### Score = \_\_\_\_\_\_ /10 

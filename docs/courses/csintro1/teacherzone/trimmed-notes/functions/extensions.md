@@ -10,7 +10,74 @@
 
 https://makecode.com/_YRsTvUU7bU6j
 
-```blocks
+`1
+### Challenge:
+
+https://makecode.com/_e8eUJ3MHkHTz
+
+
+## Sharing Code
+
+## Example #2: Spawn a single bird
+
+[Completed example](https://makecode.com/_1YWPhJVAFMkx)
+
+## Student Task #2: Making the stars go by
+
+### Standard:
+
+[standard extension code](https://makecode.com/_3Ku5qeiwed0x)
+
+[using standard extension](https://makecode.com/_76t872Ro26yu)
+
+[challenge extension](https://makecode.com/_CvyMEtEsxith)
+
+[using challenge extension](https://makecode.com/_Frc5AHcmzW3u)
+
+
+## What did we learn?
+
+1. How could sharing and importing projects help manage a group project with four or more students?
+2. What is one benefit to importing code from a project versus just copying the code into the project? You might find it useful to discuss task #2 in your response to this question.
+
+### ~hint
+
+Possible answers:
+
+1. Sharing and importing code can make it so individuals can work on different parts of the code on their own before bringing it all together. Importing the code could make it easier to keep things up to date.
+2. Importing the code helps keep things separated - you don't have to clog up your working area / space with a lot of unrelated content. Easier to update sections of the code as things are changed.
+
+### ~
+
+## Rubrics
+
+### task rubric
+
+|   | 5pts | 7pts | 9pts | 10pts |
+|:---:|:---:|:---:|:---:|:---:|
+|  | Successfully imported Darts extension in task #1 | Successfully created a 'star background' in task #2 | Successfully created a link to import task #2 into other projects | Completed challenge code |
+
+### Score = \_\_\_\_\_\_ /10
+
+### What did we learn rubric
+|   | 5pts | 7pts | 9pts | 10pts |
+|:---:|:---:|:---:|:---:|:---:|
+| Explanation | Answered one of the questions fully, or answered both questions but parts are unclear or lack detail | Explanations address both questions fully | All answers have clear explanations | Has an exceptional explanation using an original example and/or analogy |
+
+### Score = \_\_\_\_\_\_ /10
+
+```package
+darts=github:jwunderl/pxt-darts#v0.0.14
+```
+
+
+## Task Solutions Appendix
+
+### Task #1: Build an Obstacle Course
+
+#### Standard:
+
+```ts
 enum SpriteKind {
     Player,
     Enemy,
@@ -130,11 +197,9 @@ princess3 = sprites.create(img`
 princess2.setPosition(140, 50)
 ```
 
-### Challenge:
+#### Challenge
 
-https://makecode.com/_e8eUJ3MHkHTz
-
-```blocks
+```ts
 enum SpriteKind {
     Player,
     Enemy,
@@ -257,24 +322,23 @@ princess3 = sprites.create(img`
 princess2.setPosition(140, 50)
 ```
 
-## Sharing Code
 
-## Example #2: Spawn a single bird
+### Example #2: Spawn a single bird
 
-[Completed example](https://makecode.com/_1YWPhJVAFMkx)
+```ts
+scene.setBackgroundColor(10)
+```
 
-## Student Task #2: Making the stars go by
+This is the only code necessary after running the birdy extension that includes
 
-### Standard:
 
-[standard extension code](https://makecode.com/_3Ku5qeiwed0x)
-
-```blocks
+```ts
 enum SpriteKind {
     Player,
     Enemy
 }
 let projectile: Sprite = null
+projectile = sprites.createProjectile(img`
 game.onUpdateInterval(500, function () {
     projectile = sprites.createProjectile(img`
 . . . . . 1 . . . . . . . . . . 
@@ -284,10 +348,23 @@ game.onUpdateInterval(500, function () {
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . 1 1 1 . . 
+. . . . . . . . . 1 . 1 f 1 1 . 
+. . . . . . . . 1 9 1 1 1 1 . . 
+. . . . . . . 1 9 9 1 1 1 . . . 
+. . . . . . . . 1 1 1 1 . . . . 
+. . . . . . . . 5 . . 5 . . . . 
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
+`, 50, 0, SpriteKind.Player)
+```
+
+### Student Task #2: Making the stars go by
+
+#### Standard
+
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
@@ -404,7 +481,7 @@ info.startCountdown(10)
 
 Extension code
 
-```blocks
+```ts
 enum SpriteKind {
     Player,
     Enemy
@@ -432,39 +509,4 @@ game.onUpdateInterval(500, function () {
     projectile.y = Math.randomRange(0, scene.screenHeight())
     projectile.setFlag(SpriteFlag.Ghost, true)
 })
-```
-
-## What did we learn?
-
-1. How could sharing and importing projects help manage a group project with four or more students?
-2. What is one benefit to importing code from a project versus just copying the code into the project? You might find it useful to discuss task #2 in your response to this question.
-
-### ~hint
-
-Possible answers:
-
-1. Sharing and importing code can make it so individuals can work on different parts of the code on their own before bringing it all together. Importing the code could make it easier to keep things up to date.
-2. Importing the code helps keep things separated - you don't have to clog up your working area / space with a lot of unrelated content. Easier to update sections of the code as things are changed.
-
-### ~
-
-## Rubrics
-
-### task rubric
-
-|   | 5pts | 7pts | 9pts | 10pts |
-|:---:|:---:|:---:|:---:|:---:|
-|  | Successfully imported Darts extension in task #1 | Successfully created a 'star background' in task #2 | Successfully created a link to import task #2 into other projects | Completed challenge code |
-
-### Score = \_\_\_\_\_\_ /10
-
-### What did we learn rubric
-|   | 5pts | 7pts | 9pts | 10pts |
-|:---:|:---:|:---:|:---:|:---:|
-| Explanation | Answered one of the questions fully, or answered both questions but parts are unclear or lack detail | Explanations address both questions fully | All answers have clear explanations | Has an exceptional explanation using an original example and/or analogy |
-
-### Score = \_\_\_\_\_\_ /10
-
-```package
-darts=github:jwunderl/pxt-darts#v0.0.14
 ```

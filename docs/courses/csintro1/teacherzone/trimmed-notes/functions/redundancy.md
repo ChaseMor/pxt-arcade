@@ -288,3 +288,247 @@ Possible Answers:
 | Explanation | Answered one of the questions fully, or answered both questions but parts are unclear or lack detail | Explanations address both questions fully | All answers have clear explanations | Has an exceptional explanation using an original example and/or analogy |
 
 ### Score = \_\_\_\_\_\_ /10 
+
+
+
+## Task Solution Appendix
+
+## Student Task #1: Simplification
+
+### Standard:
+
+```ts
+enum SpriteKind {
+    Player,
+    Enemy
+}
+let projectile: Sprite = null
+function compress() {
+    projectile.y += -30
+    pause(500)
+    music.playTone(262, music.beat(BeatFraction.Half))
+    pause(500)
+}
+projectile = sprites.createProjectile(img`
+. . . . . . . . . . . . . . . . 
+. . 5 5 5 5 5 5 5 5 5 5 5 . . . 
+. . 5 5 2 5 5 5 5 2 5 5 5 . . . 
+. . 5 2 5 5 5 5 2 5 5 5 5 . . . 
+. . 2 2 2 2 5 2 2 2 2 5 5 . . . 
+. . 5 2 5 5 5 5 2 5 5 5 5 . . . 
+. . 5 5 2 5 5 5 5 2 5 5 5 . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`, -20, 0, SpriteKind.Player)
+compress()
+projectile = sprites.createProjectile(img`
+. . . . . . . . . . . . . . . . 
+. . 5 5 5 5 5 5 5 5 5 5 5 . . . 
+. . 5 5 f 5 f 5 f 5 f 5 5 . . . 
+. . 5 5 f 5 f 5 5 5 f 5 5 . . . 
+. . 5 5 f f f 5 f 5 5 5 5 . . . 
+. . 5 5 f 5 f 5 f 5 f 5 5 . . . 
+. . 5 5 5 5 5 5 5 5 5 5 5 . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`, -20, 0, SpriteKind.Player)
+compress()
+projectile = sprites.createProjectile(img`
+. . . . . . . . . . . . . . . . 
+. . 5 5 5 5 5 5 5 5 5 5 5 . . . 
+. . 5 5 2 5 5 5 5 2 5 5 5 . . . 
+. . 5 5 5 2 5 5 5 5 2 5 5 . . . 
+. . 5 2 2 2 2 5 2 2 2 2 5 . . . 
+. . 5 5 5 2 5 5 5 5 2 5 5 . . . 
+. . 5 5 2 5 5 5 5 2 5 5 5 . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`, -20, 0, SpriteKind.Player)
+compress()
+pause(2000)
+game.over()
+```
+
+### Challenge:
+
+```ts
+enum SpriteKind {
+    Player,
+    Enemy
+}
+let projectile: Sprite = null
+function compress() {
+    projectile.y += -30
+    projectile.vx += -20
+    pause(500)
+    music.playTone(440, music.beat(BeatFraction.Half))
+    pause(500)
+}
+projectile = sprites.createProjectile(img`
+. . . . . . . . . . . . . . . . 
+. . 5 5 5 5 5 5 5 5 5 5 5 . . . 
+. . 5 5 2 5 5 5 5 2 5 5 5 . . . 
+. . 5 2 5 5 5 5 2 5 5 5 5 . . . 
+. . 2 2 2 2 5 2 2 2 2 5 5 . . . 
+. . 5 2 5 5 5 5 2 5 5 5 5 . . . 
+. . 5 5 2 5 5 5 5 2 5 5 5 . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`, -20, 0, SpriteKind.Player)
+compress()
+projectile = sprites.createProjectile(img`
+. . . . . . . . . . . . . . . . 
+. . 5 5 5 5 5 5 5 5 5 5 5 . . . 
+. . 5 5 f 5 f 5 f 5 f 5 5 . . . 
+. . 5 5 f 5 f 5 5 5 f 5 5 . . . 
+. . 5 5 f f f 5 f 5 5 5 5 . . . 
+. . 5 5 f 5 f 5 f 5 f 5 5 . . . 
+. . 5 5 5 5 5 5 5 5 5 5 5 . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`, -20, 0, SpriteKind.Player)
+compress()
+projectile = sprites.createProjectile(img`
+. . . . . . . . . . . . . . . . 
+. . 5 5 5 5 5 5 5 5 5 5 5 . . . 
+. . 5 5 2 5 5 5 5 2 5 5 5 . . . 
+. . 5 5 5 2 5 5 5 5 2 5 5 . . . 
+. . 5 2 2 2 2 5 2 2 2 2 5 . . . 
+. . 5 5 5 2 5 5 5 5 2 5 5 . . . 
+. . 5 5 2 5 5 5 5 2 5 5 5 . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`, -20, 0, SpriteKind.Player)
+compress()
+game.over()
+```
+
+## Student Task #2: Events
+
+### Standard:
+
+```ts
+enum SpriteKind {
+    Player,
+    Enemy
+}
+let projectile: Sprite = null
+function buttonPress() {
+    music.playTone(415, music.beat(BeatFraction.Sixteenth))
+    info.changeScoreBy(1)
+    projectile = sprites.createProjectile(img`
+. . . . . . . . . . . . . . . . 
+. . . 2 . . . 2 . . . . . . . . 
+. . . . 2 3 2 . . . . . . . . . 
+. . . . 3 2 3 . . . . . . . . . 
+. . . . 2 3 2 . . . . . . . . . 
+. . . 2 . . . 2 . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`, Math.randomRange(-100, 100), Math.randomRange(-100, 100), SpriteKind.Player)
+    projectile.setFlag(SpriteFlag.Ghost, true)
+}
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    buttonPress()
+})
+controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
+    buttonPress()
+})
+game.splash("Press A and B!")
+info.setScore(0)
+info.startCountdown(15)
+```
+
+### Challenge:
+
+```ts
+enum SpriteKind {
+    Player,
+    Enemy
+}
+let projectile: Sprite = null
+function buttonPress() {
+    music.playTone(415, music.beat(BeatFraction.Sixteenth))
+    info.changeScoreBy(1)
+    projectile = sprites.createProjectile(img`
+. . . . . . . . . . . . . . . . 
+. . . 2 . . . 2 . . . . . . . . 
+. . . . 2 3 2 . . . . . . . . . 
+. . . . 3 2 3 . . . . . . . . . 
+. . . . 2 3 2 . . . . . . . . . 
+. . . 2 . . . 2 . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`, Math.randomRange(-100, 100), Math.randomRange(-100, 100), SpriteKind.Player)
+    projectile.setFlag(SpriteFlag.Ghost, true)
+    projectile.ax = Math.randomRange(-50, 50)
+    projectile.ay = Math.randomRange(-50, 50)
+}
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    buttonPress()
+})
+controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
+    buttonPress()
+})
+game.splash("Press A and B!")
+info.setScore(0)
+info.startCountdown(15)
+```

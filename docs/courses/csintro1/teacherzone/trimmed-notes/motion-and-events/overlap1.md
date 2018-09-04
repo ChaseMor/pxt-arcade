@@ -14,7 +14,67 @@ In this activity the student will work with:
 
 https://makecode.com/_1A9gDMVA7Xrk
 
-```blocks
+## set Sprite ghost on
+
+## Example 2: Sprite Overlap - Ghost on 
+
+## Student Task 2: Sprite Overlap - Ghost off and on
+
+https://makecode.com/_dpW6FTgU3Ts7
+
+### ~hint
+
+Walk through the use of SpriteKind for overlap and how the local variables `sprite` and `otherSprite` get assigned to the overlapping items.
+
+Also, check among several students for ability to create sprite motion with game pad using the shorter (dx/dy) method.
+
+### ~
+
+## Student Task 3: Create Overlap using 1 SpriteKind Player and multiple SpriteKind 
+
+https://makecode.com/_8vvhL4RL0Xdy
+
+## What did we learn? 
+
+1. Describe how a ``||sprites:Kind||`` is used to detect overlap.
+2. Suppose you have 2 or more sprites that have the same ``||sprites:Kind||``, and one of them triggers an overlap event. Explain how you can reference the sprite that was involved in the overlap event, rather than one of the other sprites of that ``||sprites:Kind||``.
+
+
+### ~hint
+
+### Possible Solutions:
+
+1. The ``||sprites:Kind||`` allows us to distinguish our sprites. We can categorize them and create events for when only specific sprites overlap (e.g. Player and Enemy, Player and Coin, Enemy and Fireball, etc.)
+2. The overlap event will create two variables that specify the sprites involved in the overlap. By using those variables instead of the ones created earlier, you can specify the sprites that are involved in the overlap
+
+### ~
+
+## Rubrics
+
+### Overlap task rubric
+
+|   | 5pts | 7pts | 9pts | 10pts |
+|:---:|:---:|:---:|:---:|:---:|
+| Overlap 1 | Fully competed 2 tasks | Fully completed all 3 tasks | Completed all 3 tasks and at least 1 challenge code | Completed all tasks and challenge Code |
+
+### Score = \_\_\_\_\_\_ /10 
+
+### What did we learn rubric
+|   | 5pts | 7pts | 9pts | 10pts |
+|:---:|:---:|:---:|:---:|:---:|
+| Explanations | Answered questions but parts are unclear or lack detail | Explanations address both questions fully | All answers have clear explanations | Included an exceptional explanation with a creative example, drawing or analogy |
+
+### Score = \_\_\_\_\_\_ /10        
+
+
+
+
+
+## Task Solution Appendix
+
+### Task 1: Add actions to overlap events
+
+```ts
 enum SpriteKind {
     Player,
     Enemy
@@ -88,13 +148,9 @@ game.onUpdate(function () {
 })
 ```
 
-## set Sprite ghost on
+### Task 2: Sprite Overlap - Ghost off and on
 
-## Example 2: Sprite Overlap - Ghost on 
-
-## Student Task 2: Sprite Overlap - Ghost off and on
-https://makecode.com/_dpW6FTgU3Ts7
-```blocks
+```ts
 enum SpriteKind {
     Player,
     Enemy,
@@ -253,19 +309,9 @@ game.onUpdate(function () {
 })
 ```
 
-### ~hint
+### Task 3: Sprite Overlap - Ghost off and on
 
-Walk through the use of SpriteKind for overlap and how the local variables `sprite` and `otherSprite` get assigned to the overlapping items.
-
-Also, check among several students for ability to create sprite motion with game pad using the shorter (dx/dy) method.
-
-### ~
-
-## Student Task 3: Create Overlap using 1 SpriteKind Player and multiple SpriteKind 
-
-https://makecode.com/_8vvhL4RL0Xdy
-
-```blocks
+```ts
 enum SpriteKind {
     Player,
     Enemy,
@@ -465,36 +511,3 @@ game.onUpdate(function () {
     head.y += controller.dy()
 })
 ```
-
-
-## What did we learn? 
-
-1. Describe how a ``||sprites:Kind||`` is used to detect overlap.
-2. Suppose you have 2 or more sprites that have the same ``||sprites:Kind||``, and one of them triggers an overlap event. Explain how you can reference the sprite that was involved in the overlap event, rather than one of the other sprites of that ``||sprites:Kind||``.
-
-
-### ~hint
-
-### Possible Solutions:
-
-1. The ``||sprites:Kind||`` allows us to distinguish our sprites. We can categorize them and create events for when only specific sprites overlap (e.g. Player and Enemy, Player and Coin, Enemy and Fireball, etc.)
-2. The overlap event will create two variables that specify the sprites involved in the overlap. By using those variables instead of the ones created earlier, you can specify the sprites that are involved in the overlap
-
-### ~
-
-## Rubrics
-
-### Overlap task rubric
-
-|   | 5pts | 7pts | 9pts | 10pts |
-|:---:|:---:|:---:|:---:|:---:|
-| Overlap 1 | Fully competed 2 tasks | Fully completed all 3 tasks | Completed all 3 tasks and at least 1 challenge code | Completed all tasks and challenge Code |
-
-### Score = \_\_\_\_\_\_ /10 
-
-### What did we learn rubric
-|   | 5pts | 7pts | 9pts | 10pts |
-|:---:|:---:|:---:|:---:|:---:|
-| Explanations | Answered questions but parts are unclear or lack detail | Explanations address both questions fully | All answers have clear explanations | Included an exceptional explanation with a creative example, drawing or analogy |
-
-### Score = \_\_\_\_\_\_ /10 

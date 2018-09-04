@@ -9,7 +9,47 @@
 
 https://makecode.com/_RHxEk94fqXda
 
-```blocks
+
+## Student Task #2: Spawning Enemies
+
+1. Start with the code from example #2b
+2. Use ``||scene:array of all tiles||`` and a ``||loops:for element value in||`` loop to create an 'enemy' for each red tile on the screen. Place the enemies on top of the tiles
+3. Add an ``||sprites:on overlap||`` event between the enemies and the player that causes the game to be over
+4. **Challenge:** add another row of walls, and pick one at random to change into a non-wall tile. Are there any rows in which choosing randomly might make the game impossible, or too easy?
+
+https://makecode.com/_71YdXDDueCV2
+
+
+## Student Task #3: Fill out levels
+
+1. Start with the code from example #3
+2. For each level in the ``||variables:levels||`` array, add in obstacles to prevent the player from finishing - without making the level impossible (hint: if you want to place enemies each time a level is created, add to the ``||functions:buildLevel||`` function. If you do place enemies, remember to destroy them using ``||sprites:array of sprites of kind||`` before moving to the next level!)
+3. **Challenge:** try adding new levels to the array. What happens if you don't place an orange tile? Does anything else need to be changed when a level is added?
+
+https://makecode.com/_XLadwL1exiFP
+
+
+## What did we learn?
+
+1. How do the tile map blocks introduced in this lesson make it easier to set up a level?
+2. In this lesson, were there any times in which a level accidentally became too hard or impossible to complete? Explain how this might happen when adding randomness to levels.
+
+### ~hint
+
+### Possible Solutions: Answers may vary
+
+1. These blocks make it easier to place down many sprites and create more dynamic levels
+2. Randomness comes with uncertainty. With that, given certain conditions, we can't guarantee that the level will be easy or even possible. It is because of this that we need to think about all the possible cases when using randomness and design our games to be different, but consistent. 
+
+### ~
+
+
+
+## Task Solution Appendix
+
+### Task #1: Placing Sprites
+
+```ts
 enum SpriteKind {
     Player,
     Enemy
@@ -132,16 +172,9 @@ myTile = scene.getTile(0, 6)
 myTile.place(sprite4)
 ```
 
-## Student Task #2: Spawning Enemies
+### Task #2: Spawning Enemies
 
-1. Start with the code from example #2b
-2. Use ``||scene:array of all tiles||`` and a ``||loops:for element value in||`` loop to create an 'enemy' for each red tile on the screen. Place the enemies on top of the tiles
-3. Add an ``||sprites:on overlap||`` event between the enemies and the player that causes the game to be over
-4. **Challenge:** add another row of walls, and pick one at random to change into a non-wall tile. Are there any rows in which choosing randomly might make the game impossible, or too easy?
-
-https://makecode.com/_71YdXDDueCV2
-
-```blocks
+```ts
 enum SpriteKind {
     Player,
     Enemy,
@@ -281,15 +314,9 @@ f f f f 2 f f f 2 f f f f f f .
 }
 ```
 
-## Student Task #3: Fill out levels
+### Task #3: Fill out levels
 
-1. Start with the code from example #3
-2. For each level in the ``||variables:levels||`` array, add in obstacles to prevent the player from finishing - without making the level impossible (hint: if you want to place enemies each time a level is created, add to the ``||functions:buildLevel||`` function. If you do place enemies, remember to destroy them using ``||sprites:array of sprites of kind||`` before moving to the next level!)
-3. **Challenge:** try adding new levels to the array. What happens if you don't place an orange tile? Does anything else need to be changed when a level is added?
-
-https://makecode.com/_XLadwL1exiFP
-
-```blocks
+```ts
 enum SpriteKind {
     Player,
     Enemy
@@ -425,17 +452,3 @@ player = sprites.create(img`
 controller.controlSprite(player, 100, 100)
 buildLevel()
 ```
-
-## What did we learn?
-
-1. How do the tile map blocks introduced in this lesson make it easier to set up a level?
-2. In this lesson, were there any times in which a level accidentally became too hard or impossible to complete? Explain how this might happen when adding randomness to levels.
-
-### ~hint
-
-### Possible Solutions: Answers may vary
-
-1. These blocks make it easier to place down many sprites and create more dynamic levels
-2. Randomness comes with uncertainty. With that, given certain conditions, we can't guarantee that the level will be easy or even possible. It is because of this that we need to think about all the possible cases when using randomness and design our games to be different, but consistent. 
-
-### ~

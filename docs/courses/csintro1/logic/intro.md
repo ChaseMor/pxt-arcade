@@ -36,8 +36,6 @@ if (info.highScore() > 5) {
 }
 ```
 
-## Coming Soon: Video
-
 ## Concept: Comparison Operators
 
 When we make comparisons, we have two numbers, in a specific order, and what is know as a comparison operator. A comparison operator allows us to specify what type of comparison we are doing. Some basic ones are:
@@ -46,6 +44,10 @@ When we make comparisons, we have two numbers, in a specific order, and what is 
 * `=` Equal to: Determines whether the two values given represent the same quantity
 
 ### Example #1: less than 
+
+https://youtu.be/s7sFOn7xXC0 
+
+[Alternative Video Location](https://aka.ms/40544a-ifless)
 
 1. Play the game linked above
 2. Review the code that uses comparisons
@@ -116,6 +118,10 @@ c a 8 a a c c c c a a f f f 8 a
 
 Notice that when the game creates a new enemy, it checks to see if the player's score is less than a certain value. In the case that it is, it means that the player has just started playing the game. Because of this, the game makes it easier for the player by decreases the speed in which the projectiles are hurling at the player. Kind of like a tutorial phase.
 
+https://youtu.be/VYmc4szD5mU 
+
+[Alternative Video Location](https://aka.ms/40544a-ifless-task)
+
 ## Task #1a: less than
 
 1. Create a new project
@@ -135,6 +141,10 @@ The player is on the left half of the screen if their ``||sprites:x position||``
 ### ~
 
 ### Example #2: greater than
+
+https://youtu.be/EhRPChFc1Us 
+
+[Alternative Video Location](https://aka.ms/40544a-ifgreater)
 
 1. Play the game linked above
 2. Review the code that uses comparisons
@@ -210,6 +220,10 @@ Notice how when the player collects a cherry, the game will check if they have c
 4. Make it so that when the player presses the ``||controller:A||``button, if the leader's ``||sprites:x position||`` is greater than the follower's, then make the follower change their ``||sprites:x position||`` by 10
 
 ### Example #3: equal
+
+https://youtu.be/BDCHtIFuEhw 
+
+[Alternative Video Location](https://aka.ms/40544a-ifequal)
 
 1. Play the game linked above
 2. Review the code that uses comparisons
@@ -302,6 +316,9 @@ Notice how when the player is on their final life, the image of the sprite chang
 3. Make it so that after the score is increased, if the score is equal to 10, use the ``||game:game over||`` block to end the game
 
 ### Example #4: using multiple if comparisons 
+
+
+[Alternative Video Location]
 
 1. Play the game linked above
 2. Review the code that uses comparisons

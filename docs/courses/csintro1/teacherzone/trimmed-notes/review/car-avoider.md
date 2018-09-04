@@ -44,7 +44,19 @@ game.onUpdateInterval(500, function () {
 
 https://makecode.com/_AovFoTepiKvq
 
-```blocks
+## Student Task 2
+
+https://makecode.com/_0pMhRuYx4Tsd
+
+
+
+
+
+## Task Solution Appendix
+
+### Task 1:
+
+```ts
 enum SpriteKind {
     Player,
     Enemy,
@@ -99,10 +111,9 @@ game.onUpdateInterval(500, function () {
 })
 ```
 
-## Student Task 2
+### Task 2: 
 
-https://makecode.com/_0pMhRuYx4Tsd
-```blocks
+```ts
 enum SpriteKind {
     Player,
     Enemy,

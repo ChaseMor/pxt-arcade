@@ -164,6 +164,8 @@ generate()
 
 solution: https://makecode.com/_fbsXo7bcX9Kz
 
+## Task 1b: End of Game Message
+
 ```blocks
 enum SpriteKind {
     Player,
@@ -324,3 +326,131 @@ if (info.score() > 10) {
 3. The second is easier to read because the blocks are one after another and not squeezing and "if" inside of an "else." [Answer may vary]
 
 ### ~
+
+
+
+## Task Solution Appendix
+
+### Task 1a: ``|logic:else|`` for Check if correct button is pressed
+
+```ts 
+enum SpriteKind {
+    Player,
+    Enemy
+}
+let mySprite: Sprite = null
+let randomPick = 0
+function generate() {
+    randomPick = Math.randomRange(0, 1)
+    if (randomPick == 0) {
+        mySprite.say("push A")
+    } else {
+        mySprite.say("push B")
+    }
+}
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    if (randomPick == 0) {
+        info.changeScoreBy(1)
+    } else {
+        info.changeScoreBy(-1)
+    }
+    generate()
+})
+controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
+    if (randomPick == 1) {
+        info.changeScoreBy(1)
+    } else {
+        info.changeScoreBy(-1)
+    }
+    generate()
+})
+game.splash("Push A or B as directed")
+mySprite = sprites.create(img`
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . 4 4 4 4 4 4 4 4 . . . 
+. . . . . 4 . . . . . . 4 . . . 
+. . . . . 4 . e . . e . 4 . . . 
+. . . . . 4 . . . . . . 4 . . . 
+. . . . . 4 . . . . . . 4 . . . 
+. . . . . 4 4 . 1 1 . 4 4 . . . 
+. . . . . . 4 4 4 4 4 4 . . . . 
+. . . . . . . . . . . . . . . . 
+`, SpriteKind.Player)
+info.startCountdown(20)
+generate()
+```
+
+
+### Task 1b: End of Game Message
+
+```ts
+enum SpriteKind {
+    Player,
+    Enemy
+}
+let mySprite: Sprite = null
+let randomPick = 0
+function generate() {
+    randomPick = Math.randomRange(0, 1)
+    if (randomPick == 0) {
+        mySprite.say("push A")
+    } else {
+        mySprite.say("push B")
+    }
+    mySprite.y += -5
+    pause(100)
+    mySprite.y += 5
+}
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    if (randomPick == 0) {
+        info.changeScoreBy(1)
+    } else {
+        info.changeScoreBy(-1)
+    }
+    generate()
+})
+controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
+    if (randomPick == 1) {
+        info.changeScoreBy(1)
+    } else {
+        info.changeScoreBy(-1)
+    }
+    generate()
+})
+info.onCountdownEnd(function () {
+    if (info.score() < 20) {
+        game.splash("Beginner score of " + info.score())
+    } else {
+        game.splash("Pro score of " + info.score())
+    }
+    game.over(true)
+})
+game.splash("Push A or B as directed")
+mySprite = sprites.create(img`
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . 4 4 4 4 4 4 4 4 . . . 
+. . . . . 4 . . . . . . 4 . . . 
+. . . . . 4 . e . . e . 4 . . . 
+. . . . . 4 . . . . . . 4 . . . 
+. . . . . 4 . . . . . . 4 . . . 
+. . . . . 4 4 . 1 1 . 4 4 . . . 
+. . . . . . 4 4 4 4 4 4 . . . . 
+. . . . . . . . . . . . . . . . 
+`, SpriteKind.Player)
+info.startCountdown(20)
+generate()
+```
