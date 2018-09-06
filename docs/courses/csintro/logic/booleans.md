@@ -107,11 +107,9 @@ game.onUpdateInterval(5000, function () {
 4. In the ``||game:on game update||`` block, add an ``||logic:if else||`` block that sets ``||variables:isLeft||`` to ``||logic:true||`` if the our sprite is on the left side of the screen and ``||logic:false||`` otherwise
 5. Make it so that if the player presses the ``||controller:A||`` button, if ``||variables:isLeft||`` is ``||logic:false||``, then the sprite should ``||sprites:say||`` something
 
-
 ## Concept: Alternating Booleans
 
 We can also use the ``||logic:not||`` block when assigning a Boolean. So if we wanted to, we could assign a Boolean to be the opposite of another Boolean. Or, what might be more useful is to set a Boolean to the opposite value of itself
-
 
 ## Example #3: Alternating Booleans
 
