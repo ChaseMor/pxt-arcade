@@ -10,7 +10,6 @@
 
 https://makecode.com/_YRsTvUU7bU6j
 
-`1
 ### Challenge:
 
 https://makecode.com/_e8eUJ3MHkHTz
@@ -67,7 +66,7 @@ Possible answers:
 ### Score = \_\_\_\_\_\_ /10
 
 ```package
-darts=github:jwunderl/pxt-darts#v0.0.14
+darts=github:jwunderl/pxt-darts#v0.0.15
 ```
 
 
@@ -224,7 +223,7 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
 sprites.onOverlap(SpriteKind.Soccer_Ball, SpriteKind.Goal, function (sprite, otherSprite) {
     game.splash("Goal!")
 })
-myDart = Darts.create(img`
+myDart = darts.create(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . e e e . . . . 

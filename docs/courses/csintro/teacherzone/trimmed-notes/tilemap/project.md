@@ -553,7 +553,7 @@ sprites.onOverlap(SpriteKind.Corgi, SpriteKind.Dart, function (sprite, otherSpri
     otherSprite.setPosition(10, 10)
 })
 let myDart: Dart = null
-myDart = Darts.create(img`
+myDart = darts.create(img`
 . . . . . . . . . . . . . . . . 
 . . 1 1 . . . . . . . 1 1 . . . 
 . . 1 d 1 1 1 d 1 1 d d 1 . . . 
@@ -580,7 +580,7 @@ myCorg.updateSprite()
 
 ```package
 corgio=github:jwunderl/pxt-corgio#v0.0.12
-darts=github:jwunderl/pxt-darts#v0.0.14
+darts=github:jwunderl/pxt-darts#v0.0.15
 ```
 
 ## Student Task #1:
