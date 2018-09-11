@@ -17,7 +17,9 @@ Then ask for 6, 7, 8, 9, 10
 
 Ask for students who got 11 and no hands should go up.
 
-Repeat for smaller than 5 , down to zero.
+Repeat for smaller than 5, down to zero.
+
+Ask students to think about what numbers are possible when picking from a lowest of 1 and a highest of 10. Is 1 possible? Is 10? How many numbers are there total?
 
 ### ~
 
