@@ -12,7 +12,6 @@
   "helpers|block": "helpers",
   "image.create|block": "create image width %width height %height",
   "images._image|block": "%image",
-  "images._longTextImage|block": "%img",
   "images._screenImage|block": "%img",
   "images._spriteImage|block": "%img",
   "images._tileMapImage|block": "%img",

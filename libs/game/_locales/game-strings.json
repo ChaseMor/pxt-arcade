@@ -60,7 +60,7 @@
   "game.onUpdate|block": "on game update",
   "game.over|block": "game over||win %win",
   "game.setDialogCursor|block": "set dialog cursor to %frame=screen_image_picker",
-  "game.setDialogFrame|block": "set dialog frame to %frame=long_text_image_picker",
+  "game.setDialogFrame|block": "set dialog frame to %frame=screen_image_picker",
   "game.setDialogTextColor|block": "set dialog text color to %color=colorindexpicker",
   "game.showLongText|block": "show long text %str %layout",
   "game.splash|block": "splash %title||%subtitle",
