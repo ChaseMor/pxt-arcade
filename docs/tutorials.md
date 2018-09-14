@@ -29,3 +29,4 @@
 ## See Also
 
 [Simple Maze](/tutorials/simple-maze)
+[Sprite Motion](/tutorials/sprite-motion)

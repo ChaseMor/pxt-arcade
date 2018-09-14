@@ -2,13 +2,13 @@
 
 ## Introduction @unplugged
 
-Welcome to @boardname@! Let's get started by creating a simple game where your player tries to get out of a maze while there's still time!
+Welcome to @boardname@! Let's start by making a basic sprite and having it move around the screen
 
 ![Simple maze game playing](/static/tutorials/simple-maze/simple-maze-game.gif)
 
 ## Step 1
 
-The first thing we'll do is make our player. Find the ``||variables:set mySprite to||`` in ``||sprites:Sprites||``. Drag it into the ``||loops:on start||``.
+Start by making a simple sprite. Find the ``||variables:set mySprite to||`` in ``||sprites:Sprites||``. Drag it into the ``||loops:on start||``.
 
 ```blocks
 let mySprite: Sprite = null
@@ -32,287 +32,88 @@ mySprite = sprites.create(img`
 `)
 ```
 
-## Step 2 @fullscreen
+## Step 2
 
-Click on the grey box in ``||variables:set mySprite to||`` an draw your player's image. It can be anything, solid block or a figure.
+Click on the grey box in ``||variables:set mySprite to||`` an draw your sprite's image. It could be anything you like: A blob, a square, a stick figure, a smiley face, etc.
 
 ![Draw a figure for the sprite](/static/tutorials/simple-maze/draw-sprite-figure.gif)
 
 ```blocks
 let mySprite: Sprite = null
 mySprite = sprites.create(img`
-. . . . . . . . . . . . . . . . 
-. . . 2 2 2 2 2 2 2 2 . . . . . 
-. . 2 2 . . . . . . 2 . . . . . 
-. . 2 . 1 . . . 1 . . 2 . . . . 
-. . 2 . . . . . . . . 2 . . . . 
-. . 2 . . . 1 . . . . 2 . . . . 
-. . 2 . . . . . . . . 2 . . . . 
-. . 2 2 2 . . . . . 2 2 . . . . 
-. . . . 2 2 2 2 2 2 2 . . . . . 
-. . . . . . 2 . . . . . . . . . 
-. 2 2 2 . . 2 . . . . 2 . . . . 
-. . . 2 2 2 2 2 2 2 2 2 . . . . 
-. . . . . . 2 . . . . . . . . . 
-. . . . . . 2 . . . . . . . . . 
-. . . 2 2 2 . 2 . . . . . . . . 
-. . . 2 . . . . 2 2 . . . . . . 
+. . . . . . f f f f . . . . . . 
+. . . . f f 5 5 5 5 f f . . . . 
+. . . f 5 5 5 5 5 5 5 5 f . . . 
+. . f 5 5 5 5 5 5 5 5 5 5 f . . 
+. f 5 5 f f f 5 5 f f f 5 5 f . 
+. f 5 5 f f f 5 5 f f f 5 5 f . 
+f 5 5 5 f f f 5 5 f f f 5 5 5 f 
+f 5 5 5 5 5 5 5 5 5 5 5 5 5 5 f 
+f 5 5 5 5 5 5 5 5 5 5 5 5 5 5 f 
+f 5 5 f 5 5 5 5 5 5 5 5 f 5 5 f 
+. f 5 f f f 5 5 5 5 f f f 5 f . 
+. f 5 5 f f f f f f f f 5 5 f . 
+. . f 5 5 f f f f f f 5 5 f . . 
+. . . f 5 5 5 5 5 5 5 5 f . . . 
+. . . . f f 5 5 5 5 f f . . . . 
+. . . . . . f f f f . . . . . . 
 `)
 ```
 
 ## Step 3
 
-Now, let's make our sprite figure move with the controller arrow keys. Get a ``||controller:control sprite||`` from ``||controller:Controller||`` and put it under ``||variables:set mySprite to||``.
+From the ``||contoller:Controller||`` section, add in a ``||controller:on button pressed||`` block and place anywhere on the screen. Using the dropdown menu, change ``||controller:any||`` to ``||controller:left||``.
 
 ```blocks
-let mySprite: Sprite = null
-mySprite = sprites.create(img`
-. . . . . . . . . . . . . . . . 
-. . . 2 2 2 2 2 2 2 2 . . . . . 
-. . 2 2 . . . . . . 2 . . . . . 
-. . 2 . 1 . . . 1 . . 2 . . . . 
-. . 2 . . . . . . . . 2 . . . . 
-. . 2 . . . 1 . . . . 2 . . . . 
-. . 2 . . . . . . . . 2 . . . . 
-. . 2 2 2 . . . . . 2 2 . . . . 
-. . . . 2 2 2 2 2 2 2 . . . . . 
-. . . . . . 2 . . . . . . . . . 
-. 2 2 2 . . 2 . . . . 2 . . . . 
-. . . 2 2 2 2 2 2 2 2 2 . . . . 
-. . . . . . 2 . . . . . . . . . 
-. . . . . . 2 . . . . . . . . . 
-. . . 2 2 2 . 2 . . . . . . . . 
-. . . 2 . . . . 2 2 . . . . . . 
-`)
-controller.controlSprite(mySprite, 100, 100)
+controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
+    
+})
 ```
 
 ## Step 4
 
-Next, make a tile to set into the scene. Pull ``||scene:set tile||`` from ``||scene:Scene||`` into ``||loops:on start||``. Fill the whole tile with one color in the image editor.
+Add in a ``||sprites:change mySprite||`` ``||variables:x position||`` block inside the ``||controller:on left button pressed||`` event. Then make it so that the ``||variables:x position||`` changes by -3 instead the default value of 0.
 
 ```blocks
 let mySprite: Sprite = null
-mySprite = sprites.create(img`
-. . . . . . . . . . . . . . . . 
-. . . 2 2 2 2 2 2 2 2 . . . . . 
-. . 2 2 . . . . . . 2 . . . . . 
-. . 2 . 1 . . . 1 . . 2 . . . . 
-. . 2 . . . . . . . . 2 . . . . 
-. . 2 . . . 1 . . . . 2 . . . . 
-. . 2 . . . . . . . . 2 . . . . 
-. . 2 2 2 . . . . . 2 2 . . . . 
-. . . . 2 2 2 2 2 2 2 . . . . . 
-. . . . . . 2 . . . . . . . . . 
-. 2 2 2 . . 2 . . . . 2 . . . . 
-. . . 2 2 2 2 2 2 2 2 2 . . . . 
-. . . . . . 2 . . . . . . . . . 
-. . . . . . 2 . . . . . . . . . 
-. . . 2 2 2 . 2 . . . . . . . . 
-. . . 2 . . . . 2 2 . . . . . . 
-`)
-controller.controlSprite(mySprite, 100, 100)
-scene.setTile(0, img`
-a a a a a a a a a a a a a a a a 
-a a a a a a a a a a a a a a a a 
-a a a a a a a a a a a a a a a a 
-a a a a a a a a a a a a a a a a 
-a a a a a a a a a a a a a a a a 
-a a a a a a a a a a a a a a a a 
-a a a a a a a a a a a a a a a a 
-a a a a a a a a a a a a a a a a 
-a a a a a a a a a a a a a a a a 
-a a a a a a a a a a a a a a a a 
-a a a a a a a a a a a a a a a a 
-a a a a a a a a a a a a a a a a 
-a a a a a a a a a a a a a a a a 
-a a a a a a a a a a a a a a a a 
-a a a a a a a a a a a a a a a a 
-a a a a a a a a a a a a a a a a 
-`)
+controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
+    mySprite.x += -3
+})
 ```
 
 ## Step 5
 
-Click on the color bubble in ``||scene:set tile||`` and change the color index to the same color you filled the tile with. Click on the **(+)**  and set ``wall`` to `ON`.
+Add in another  ``||controller: on button press||`` event, but this time, make the ``||variables:x position||`` change by 3 when the ``||controller:right||`` button is pressed.
 
 ```blocks
 let mySprite: Sprite = null
-mySprite = sprites.create(img`
-. . . . . . . . . . . . . . . . 
-. . . 2 2 2 2 2 2 2 2 . . . . . 
-. . 2 2 . . . . . . 2 . . . . . 
-. . 2 . 1 . . . 1 . . 2 . . . . 
-. . 2 . . . . . . . . 2 . . . . 
-. . 2 . . . 1 . . . . 2 . . . . 
-. . 2 . . . . . . . . 2 . . . . 
-. . 2 2 2 . . . . . 2 2 . . . . 
-. . . . 2 2 2 2 2 2 2 . . . . . 
-. . . . . . 2 . . . . . . . . . 
-. 2 2 2 . . 2 . . . . 2 . . . . 
-. . . 2 2 2 2 2 2 2 2 2 . . . . 
-. . . . . . 2 . . . . . . . . . 
-. . . . . . 2 . . . . . . . . . 
-. . . 2 2 2 . 2 . . . . . . . . 
-. . . 2 . . . . 2 2 . . . . . . 
-`)
-controller.controlSprite(mySprite, 100, 100)
-scene.setTile(10, img`
-a a a a a a a a a a a a a a a a 
-a a a a a a a a a a a a a a a a 
-a a a a a a a a a a a a a a a a 
-a a a a a a a a a a a a a a a a 
-a a a a a a a a a a a a a a a a 
-a a a a a a a a a a a a a a a a 
-a a a a a a a a a a a a a a a a 
-a a a a a a a a a a a a a a a a 
-a a a a a a a a a a a a a a a a 
-a a a a a a a a a a a a a a a a 
-a a a a a a a a a a a a a a a a 
-a a a a a a a a a a a a a a a a 
-a a a a a a a a a a a a a a a a 
-a a a a a a a a a a a a a a a a 
-a a a a a a a a a a a a a a a a 
-a a a a a a a a a a a a a a a a 
-`, true)
+controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
+    mySprite.x += 3
+})
 ```
 
 ## Step 6
 
-Add a ``||scene:set tile map||`` to ``||loops:on start||``. For it's image, draw a maze using the same color as the tile you just made. Leave an opening on the left side of the maze.
+Add in another ``||controller: on button press||`` event for when the player presses the ``||controller:down||`` button. Inside, this event, add in a ``||sprites:change mySprite||`` ``||variables:x position||`` block. In the dropdown menu for this block, change ``||variables:x position||`` to ``||variables:y position||``. Make the ``||variables:y position||`` change by 3 instead of 0
 
 ```blocks
 let mySprite: Sprite = null
-mySprite = sprites.create(img`
-. . . . . . . . . . . . . . . . 
-. . . 2 2 2 2 2 2 2 2 . . . . . 
-. . 2 2 . . . . . . 2 . . . . . 
-. . 2 . 1 . . . 1 . . 2 . . . . 
-. . 2 . . . . . . . . 2 . . . . 
-. . 2 . . . 1 . . . . 2 . . . . 
-. . 2 . . . . . . . . 2 . . . . 
-. . 2 2 2 . . . . . 2 2 . . . . 
-. . . . 2 2 2 2 2 2 2 . . . . . 
-. . . . . . 2 . . . . . . . . . 
-. 2 2 2 . . 2 . . . . 2 . . . . 
-. . . 2 2 2 2 2 2 2 2 2 . . . . 
-. . . . . . 2 . . . . . . . . . 
-. . . . . . 2 . . . . . . . . . 
-. . . 2 2 2 . 2 . . . . . . . . 
-. . . 2 . . . . 2 2 . . . . . . 
-`)
-controller.controlSprite(mySprite, 100, 100)
-scene.setTile(10, img`
-a a a a a a a a a a a a a a a a 
-a a a a a a a a a a a a a a a a 
-a a a a a a a a a a a a a a a a 
-a a a a a a a a a a a a a a a a 
-a a a a a a a a a a a a a a a a 
-a a a a a a a a a a a a a a a a 
-a a a a a a a a a a a a a a a a 
-a a a a a a a a a a a a a a a a 
-a a a a a a a a a a a a a a a a 
-a a a a a a a a a a a a a a a a 
-a a a a a a a a a a a a a a a a 
-a a a a a a a a a a a a a a a a 
-a a a a a a a a a a a a a a a a 
-a a a a a a a a a a a a a a a a 
-a a a a a a a a a a a a a a a a 
-a a a a a a a a a a a a a a a a 
-`, true)
-scene.setTileMap(img`
-a a a a a a a a a a 
-a . . . . . . . . a 
-a . . . . . . . . a 
-a . . a . . a a a a 
-a . . a . . . a . a 
-a . . a . . . . . a 
-. . . a . a . . . a 
-a a a a a a a a a a 
-`)
+controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
+    mySprite.y += 3
+})
 ```
 
 ## Step 7
 
-Put a ``||info:start countdown||`` after ``||scene:set tile map||`` to set the amount of time for the game.
+Do the same thing but this time, make the ``||variables:y position||`` change by -3 when the ``||controller:up||`` button is pressed.
 
 ```blocks
 let mySprite: Sprite = null
-mySprite = sprites.create(img`
-. . . . . . . . . . . . . . . . 
-. . . 2 2 2 2 2 2 2 2 . . . . . 
-. . 2 2 . . . . . . 2 . . . . . 
-. . 2 . 1 . . . 1 . . 2 . . . . 
-. . 2 . . . . . . . . 2 . . . . 
-. . 2 . . . 1 . . . . 2 . . . . 
-. . 2 . . . . . . . . 2 . . . . 
-. . 2 2 2 . . . . . 2 2 . . . . 
-. . . . 2 2 2 2 2 2 2 . . . . . 
-. . . . . . 2 . . . . . . . . . 
-. 2 2 2 . . 2 . . . . 2 . . . . 
-. . . 2 2 2 2 2 2 2 2 2 . . . . 
-. . . . . . 2 . . . . . . . . . 
-. . . . . . 2 . . . . . . . . . 
-. . . 2 2 2 . 2 . . . . . . . . 
-. . . 2 . . . . 2 2 . . . . . . 
-`)
-controller.controlSprite(mySprite, 100, 100)
-scene.setTile(10, img`
-a a a a a a a a a a a a a a a a 
-a a a a a a a a a a a a a a a a 
-a a a a a a a a a a a a a a a a 
-a a a a a a a a a a a a a a a a 
-a a a a a a a a a a a a a a a a 
-a a a a a a a a a a a a a a a a 
-a a a a a a a a a a a a a a a a 
-a a a a a a a a a a a a a a a a 
-a a a a a a a a a a a a a a a a 
-a a a a a a a a a a a a a a a a 
-a a a a a a a a a a a a a a a a 
-a a a a a a a a a a a a a a a a 
-a a a a a a a a a a a a a a a a 
-a a a a a a a a a a a a a a a a 
-a a a a a a a a a a a a a a a a 
-a a a a a a a a a a a a a a a a 
-`, true)
-scene.setTileMap(img`
-a a a a a a a a a a 
-a . . . . . . . . a 
-a . . . . . . . . a 
-a . . a . . a a a a 
-a . . a . . . a . a 
-a . . a . . . . . a 
-. . . a . a . . . a 
-a a a a a a a a a a 
-`)
-info.startCountdown(10)
-```
-
-## Step 8
-
-We need to see if the player makes it out of the maze by adding a ``||logic:if then||`` block inside ``||game:update||``. Get a ``||logic:0 < 0||`` block and replace the `true` condition with it.
-
-```blocks
-game.onUpdate(function () {
-    if (0 < 0) {
-
-    }
-})
-```
-
-## Step 9
-
-Change the ``<`` condition in ``||logic:0 < 0||`` to ``<=``. Find the ``||sprites:mySprite x (horizontal position)||`` block and put it in where the first `0` is. Click the dropdown and select ``left``. Put a ``||game:game over||`` inside of ``||logic:if then||``.
-
-```blocks
-let mySprite: Sprite = null
-game.onUpdate(function () {
-    if (mySprite.left <= 0) {
-        game.over(true)
-    }
+controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
+    mySprite.y += -3
 })
 ```
 
 ## Complete
 
-Congratulations, your maze game is complete! You can now play your first game. See if you can escape the maze.
+Congratulations, your sprite can move around the screen!
