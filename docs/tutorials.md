@@ -19,9 +19,7 @@
   "description": "Learn how to move a sprite around the screen",
   "url": "/tutorials/sprite-motion",
   "cardType": "tutorial",
-  "label": "New? Start Here!",
-  "labelClass": "green ribbon huge",
-  "imageUrl": "/static/tutorials/simple-maze.png"
+  "imageUrl": "/static/tutorials/sprite-motion.png"
 }
 ]
 ```

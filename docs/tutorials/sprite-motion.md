@@ -1,10 +1,10 @@
-# Getting started
+# Sprite Motion
 
 ## Introduction @unplugged
 
 Welcome to @boardname@! Let's start by making a basic sprite and having it move around the screen
 
-![Simple maze game playing](/static/tutorials/simple-maze/simple-maze-game.gif)
+![Simple sprite moving](/static/tutorials/sprite-motion/sprite-motion.gif)
 
 ## Step 1
 
@@ -36,7 +36,7 @@ mySprite = sprites.create(img`
 
 Click on the grey box in ``||variables:set mySprite to||`` an draw your sprite's image. It could be anything you like: A blob, a square, a stick figure, a smiley face, etc.
 
-![Draw a figure for the sprite](/static/tutorials/simple-maze/draw-sprite-figure.gif)
+![Draw a figure for the sprite](/static/tutorials/sprite-motion/draw-sprite.gif)
 
 ```blocks
 let mySprite: Sprite = null
@@ -63,6 +63,8 @@ f 5 5 f 5 5 5 5 5 5 5 5 f 5 5 f
 ## Step 3
 
 From the ``||contoller:Controller||`` section, add in a ``||controller:on button pressed||`` block and place anywhere on the screen. Using the dropdown menu, change ``||controller:any||`` to ``||controller:left||``.
+
+![Draw a figure for the sprite](/static/tutorials/sprite-motion/change-button.gif)
 
 ```blocks
 controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
