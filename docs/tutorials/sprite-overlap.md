@@ -8,82 +8,200 @@ Let's make a game that responds when one sprite overlaps another
 
 ## Step 1
 
-Start by making a simple sprite. This will be a sprite that eats food, so it might make sense to make a face or an animal.
+Start by making 2 new ``||variables:variables||`` called ``||variables:food||`` and ``||variables:head||``
+
+
+## Step 2
+
+Start by making a simple sprite. Make this sprite something that can be eaten, like a cherry. Where is says ``||variables:mySprite||`` use the drop down menu to change it to ``||variables:food||``.
+
+```blocks
+let food: Sprite = null
+food = sprites.create(img`
+. . . . . 7 7 . . . . 7 7 . . . 
+. . . . . 7 7 7 7 . 7 7 7 7 . . 
+. . . . . 7 7 7 7 e 7 7 7 7 . . 
+. . . . . . 7 7 e e 7 7 7 . . . 
+. . . . . . . e e . . . . . . . 
+. . . . . . . 2 . . . . . . . . 
+. . . . . 2 2 2 2 2 . . . . . . 
+. . . . 2 2 2 2 2 2 2 . . . . . 
+. . . 2 2 2 2 2 2 2 2 2 . . . . 
+. . 2 2 2 2 2 2 2 2 2 2 2 . . . 
+. . 2 2 2 2 2 2 2 2 2 2 2 . . . 
+. . 2 2 2 2 2 2 2 2 2 2 2 . . . 
+. . . 2 2 2 2 2 2 2 2 2 . . . . 
+. . . . 2 2 2 2 2 2 2 . . . . . 
+. . . . . 2 2 2 2 2 . . . . . . 
+. . . . . . 2 2 2 . . . . . . .
+`)
+```
+
+## Step 3
+
+Make another simple sprite. This will be a sprite that eats food, so it might make sense to make a face or an animal. Change the name of this one to ``||variables:head||``
+
+You can make bigger sprites by clicking the `16x16` at the bottom of the sprite editor panel
+
+```blocks
+let head: Sprite = null
+head = sprites.create(img`
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . a a a a a a a a a a a . . . . . . . . . . . 
+. . . . . . . . a a a a a a a a a a a a a a a . . . . . . . . . 
+. . . . . . . . . a a a 5 5 5 a a a a a a a a a . . . . . . . . 
+. . . . . . . . a 5 5 5 5 5 5 5 a a a a a a a a . . . . . . . . 
+. . . . . . . 5 5 5 5 5 5 5 5 5 a a a a a a a a . . . . . . . . 
+. . . . . . 5 5 5 5 6 5 5 5 5 5 a a a a a a a a . . . . . . . . 
+. . . . 5 5 5 5 5 5 5 5 5 5 a a a a a a a a a a a . . . . . . . 
+. . . 5 5 5 5 5 5 5 5 5 5 5 a a a 5 5 5 5 5 a a a . . . . . . . 
+. . . 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 a a a . . . . . . . 
+. . . . . 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 a a a . . . . . . . 
+. . . . 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 a a a . . . . . . . 
+. . . . . 1 . 1 . 1 . 5 5 5 5 5 5 5 5 5 5 5 a a a . . . . . . . 
+. . . . . . . . . . . 5 5 5 5 5 5 5 5 5 5 5 5 5 . . . . . . . . 
+. . . . . . . . . . . . 5 5 5 5 5 5 5 5 5 5 5 5 . . . . . . . . 
+. . . . . . . . . . . . 5 5 5 5 5 5 5 5 5 5 5 . . . . . . . . . 
+. . . . . . . . . . . 1 5 5 5 5 5 5 5 5 5 5 5 . . . . . . . . . 
+. . . . . . . . . 1 . 5 5 5 5 5 5 5 5 5 5 5 . . . . . . . . . . 
+. . . . . . . . 5 5 5 5 5 5 5 5 5 5 5 5 5 . . . . . . . . . . . 
+. . . . . . . . . 5 5 5 5 5 5 5 5 5 5 5 . . . . . . . . . . . . 
+. . . . . . . . . . . 5 5 5 5 5 5 5 . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . 5 5 5 5 . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . 5 5 5 5 . . . . . . . . . . . . . . 
+. . . . . . . . . 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 . . . . . . . 
+. . . . . . . . . 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 . . . . . . . 
+. . . . . . . . . 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 . . . . . . . 
+. . . . . . . . . 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 . . . . . . . 
+. . . . . . . . . 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 . . . . . . . 
+. . . . . . . . . 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 . . . . . . . 
+`)
+```
+
+
+## Step 4
+
+Use the ``||sprites:set position of ||`` block to change the position of ``||variables:food||`` and ``||variables:head||`` to (x = 20, y = 60) and (x = 120, y = 60) respectively
 
 ```blocks
 enum SpriteKind {
     Player,
     Enemy
 }
-let mySprite: Sprite = null
-mySprite = sprites.create(img`
-. f .
-f . f
-. f .
-`, SpriteKind.Player)
-```
-
-## Step 2
-
-Click on the grey box in ``||variables:set mySprite to||`` an draw your sprite's image. It could be anything you like: A blob, a square, a stick figure, a smiley face, etc.
-
-![Draw a figure for the sprite](/static/tutorials/sprite-motion/draw-sprite.gif)
-
-```blocks
-let mySprite: Sprite = null
-mySprite = sprites.create(img`
-. . . . . . f f f f . . . . . . 
-. . . . f f 5 5 5 5 f f . . . . 
-. . . f 5 5 5 5 5 5 5 5 f . . . 
-. . f 5 5 5 5 5 5 5 5 5 5 f . . 
-. f 5 5 f f f 5 5 f f f 5 5 f . 
-. f 5 5 f f f 5 5 f f f 5 5 f . 
-f 5 5 5 f f f 5 5 f f f 5 5 5 f 
-f 5 5 5 5 5 5 5 5 5 5 5 5 5 5 f 
-f 5 5 5 5 5 5 5 5 5 5 5 5 5 5 f 
-f 5 5 f 5 5 5 5 5 5 5 5 f 5 5 f 
-. f 5 f f f 5 5 5 5 f f f 5 f . 
-. f 5 5 f f f f f f f f 5 5 f . 
-. . f 5 5 f f f f f f 5 5 f . . 
-. . . f 5 5 5 5 5 5 5 5 f . . . 
-. . . . f f 5 5 5 5 f f . . . . 
-. . . . . . f f f f . . . . . . 
+let head: Sprite = null
+let food: Sprite = null
+food = sprites.create(img`
+. . . . . 7 7 . . . . 7 7 . . . 
+. . . . . 7 7 7 7 . 7 7 7 7 . . 
+. . . . . 7 7 7 7 e 7 7 7 7 . . 
+. . . . . . 7 7 e e 7 7 7 . . . 
+. . . . . . . e e . . . . . . . 
+. . . . . . . 2 . . . . . . . . 
+. . . . . 2 2 2 2 2 . . . . . . 
+. . . . 2 2 2 2 2 2 2 . . . . . 
+. . . 2 2 2 2 2 2 2 2 2 . . . . 
+. . 2 2 2 2 2 2 2 2 2 2 2 . . . 
+. . 2 2 2 2 2 2 2 2 2 2 2 . . . 
+. . 2 2 2 2 2 2 2 2 2 2 2 . . . 
+. . . 2 2 2 2 2 2 2 2 2 . . . . 
+. . . . 2 2 2 2 2 2 2 . . . . . 
+. . . . . 2 2 2 2 2 . . . . . . 
+. . . . . . 2 2 2 . . . . . . . 
 `)
+head = sprites.create(img`
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . a a a a a a a a a a a . . . . . . . . . . . 
+. . . . . . . . a a a a a a a a a a a a a a a . . . . . . . . . 
+. . . . . . . . . a a a 5 5 5 a a a a a a a a a . . . . . . . . 
+. . . . . . . . a 5 5 5 5 5 5 5 a a a a a a a a . . . . . . . . 
+. . . . . . . 5 5 5 5 5 5 5 5 5 a a a a a a a a . . . . . . . . 
+. . . . . . 5 5 5 5 6 5 5 5 5 5 a a a a a a a a . . . . . . . . 
+. . . . 5 5 5 5 5 5 5 5 5 5 a a a a a a a a a a a . . . . . . . 
+. . . 5 5 5 5 5 5 5 5 5 5 5 a a a 5 5 5 5 5 a a a . . . . . . . 
+. . . 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 a a a . . . . . . . 
+. . . . . 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 a a a . . . . . . . 
+. . . . 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 a a a . . . . . . . 
+. . . . . 1 . 1 . 1 . 5 5 5 5 5 5 5 5 5 5 5 a a a . . . . . . . 
+. . . . . . . . . . . 5 5 5 5 5 5 5 5 5 5 5 5 5 . . . . . . . . 
+. . . . . . . . . . . . 5 5 5 5 5 5 5 5 5 5 5 5 . . . . . . . . 
+. . . . . . . . . . . . 5 5 5 5 5 5 5 5 5 5 5 . . . . . . . . . 
+. . . . . . . . . . . 1 5 5 5 5 5 5 5 5 5 5 5 . . . . . . . . . 
+. . . . . . . . . 1 . 5 5 5 5 5 5 5 5 5 5 5 . . . . . . . . . . 
+. . . . . . . . 5 5 5 5 5 5 5 5 5 5 5 5 5 . . . . . . . . . . . 
+. . . . . . . . . 5 5 5 5 5 5 5 5 5 5 5 . . . . . . . . . . . . 
+. . . . . . . . . . . 5 5 5 5 5 5 5 . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . 5 5 5 5 . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . 5 5 5 5 . . . . . . . . . . . . . . 
+. . . . . . . . . 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 . . . . . . . 
+. . . . . . . . . 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 . . . . . . . 
+. . . . . . . . . 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 . . . . . . . 
+. . . . . . . . . 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 . . . . . . . 
+. . . . . . . . . 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 . . . . . . . 
+. . . . . . . . . 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 . . . . . . . 
+`)
+food.setPosition(20, 60)
+head.setPosition(120, 60)
 ```
 
-## Step 3
+## Step 5
 
-From the ``||contoller:Controller||`` section, add in a ``||controller:on button pressed||`` block and place anywhere on the screen. Using the dropdown menu, change ``||controller:any||`` to ``||controller:left||``.
-
-![Draw a figure for the sprite](/static/tutorials/sprite-motion/change-button.gif)
+Make the ``||variables:head||`` sprite move left and right when the player presses the left and right buttons.
 
 ```blocks
-controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
-    
-})
-```
-
-## Step 4
-
-Add in a ``||sprites:change mySprite||`` ``||variables:x position||`` block inside the ``||controller:on left button pressed||`` event. Then make it so that the ``||variables:x position||`` changes by -3 instead the default value of 0.
-
-```blocks
-let mySprite: Sprite = null
-controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
-    mySprite.x += -3
+let head:Sprite = null
+game.onUpdate(function () {
+    head.x += controller.dx()
 })
 ```
 
 ## Step 5
 
-Add in another  ``||controller: on button press||`` event, but this time, make the ``||variables:x position||`` change by 3 when the ``||controller:right||`` button is pressed.
+Make the ``||variables:head||`` sprite move left and right when the player presses the left and right buttons.
 
 ```blocks
-let mySprite: Sprite = null
-controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
-    mySprite.x += 3
+let head:Sprite = null
+game.onUpdate(function () {
+    head.x += controller.dx()
 })
-```Complete @unplugged
+```
+
+## Step 6
+
+Add in
+
+
+```blocks
+enum SpriteKind {
+    Player,
+    Enemy
+}
+let otherSprite:Sprite = null
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
+    otherSprite.destroy()
+})
+```
+
+## Step 7
+
+Add in
+
+```blocks
+enum SpriteKind {
+    Player,
+    Enemy
+}
+let otherSprite:Sprite = null
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
+    otherSprite.destroy()
+})
+```
+## Complete @unplugged
 
 Congratulations, your sprite can move around the screen!
 
