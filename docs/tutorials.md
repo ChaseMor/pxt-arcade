@@ -20,6 +20,20 @@
   "url": "/tutorials/sprite-motion",
   "cardType": "tutorial",
   "imageUrl": "/static/tutorials/sprite-motion.png"
+},
+{
+  "name": "Sprite Motion 2",
+  "description": "Learn how to move a sprite around the screen",
+  "url": "/tutorials/sprite-motion-2",
+  "cardType": "tutorial",
+  "imageUrl": "/static/tutorials/sprite-motion.png"
+},
+{
+  "name": "Sprite Motion 3",
+  "description": "Learn how to move a sprite around the screen",
+  "url": "/tutorials/sprite-motion-3",
+  "cardType": "tutorial",
+  "imageUrl": "/static/tutorials/sprite-motion.png"
 }
 ]
 ```

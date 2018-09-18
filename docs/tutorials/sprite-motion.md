@@ -116,6 +116,10 @@ controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 ```
 
-## Complete
+## Complete @unplugged
 
 Congratulations, your sprite can move around the screen!
+
+Play around with the different values that you use to change the position.
+
+Also, look at what happens if we change our sprite's velocity or acceleration instead of position.
