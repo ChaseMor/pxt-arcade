@@ -16,18 +16,6 @@ namespace pxsim {
         dist?: number;
     }
 
-<<<<<<< HEAD
-    const aspectRatio = 2; // width / height
-
-    export interface KeyBinding {
-        el: Element;
-        key: Key;
-        isDown?: boolean;
-        dist?: number;
-    }
-
-=======
->>>>>>> 7a3cb8809f5b27c6265830f21cb66bbe5dcb6b6f
     export class ControlPad {
         dPadRoot: s.SVG;
         buttonsRoot: s.SVG;
