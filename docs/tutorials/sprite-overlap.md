@@ -1,21 +1,29 @@
-# Sprite Motion
+# Sprite Overlap
 
 ## Introduction @unplugged
 
 Let's make a game that responds when one sprite overlaps another
 
-![Simple sprite moving](/static/tutorials/sprite-motion/sprite-motion.gif)
+![Simple sprite overlap](/static/tutorials/sprite-overlap/sprite-overlap.gif)
 
 ## Step 1
 
 Start by making 2 new ``||variables:variables||`` called ``||variables:food||`` and ``||variables:head||``
 
+![Set Variables](/static/tutorials/sprite-overlap/set-variables.gif)
 
 ## Step 2
 
-Start by making a simple sprite. Make this sprite something that can be eaten, like a cherry. Where is says ``||variables:mySprite||`` use the drop down menu to change it to ``||variables:food||``.
+Start by making a simple sprite. Make this sprite something that can be eaten, like a cherry. Where is says ``||variables:mySprite||`` use the drop down menu to change it to ``||variables:food||``. Change the kind of this sprite from `Player` to `Enemy`.
+
+
+![Set Name and SpriteKind](/static/tutorials/sprite-overlap/set-name-and-spritekind.gif)
 
 ```blocks
+enum SpriteKind {
+    Player,
+    Enemy
+}
 let food: Sprite = null
 food = sprites.create(img`
 . . . . . 7 7 . . . . 7 7 . . . 
@@ -44,6 +52,10 @@ Make another simple sprite. This will be a sprite that eats food, so it might ma
 You can make bigger sprites by clicking the `16x16` at the bottom of the sprite editor panel
 
 ```blocks
+enum SpriteKind {
+    Player,
+    Enemy
+}
 let head: Sprite = null
 head = sprites.create(img`
 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
@@ -80,7 +92,6 @@ head = sprites.create(img`
 . . . . . . . . . 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 . . . . . . . 
 `, SpriteKind.Player)
 ```
-
 
 ## Step 4
 
@@ -160,7 +171,7 @@ game.onUpdate(function () {
 })
 ```
 
-## Step 5
+## Step 6
 
 Make the ``||variables:head||`` sprite move left and right when the player presses the left and right buttons.
 
@@ -171,22 +182,23 @@ game.onUpdate(function () {
 })
 ```
 
-## Step 6
+## Step 7
 
 Add in a ``||sprites:on sprite overlaps||`` event from under ``||sprites:Sprites||``. Use the dropdown menu to detect when a sprite of kind `Player` overlaps with a sprite of kind `Enemy`
 
+
+![Change Overlapping SpriteKind](/static/tutorials/sprite-overlap/change-overlapping-spritekind.gif)
 
 ```blocks
 enum SpriteKind {
     Player,
     Enemy
 }
-let otherSprite:Sprite = null
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
 })
 ```
 
-## Step 7
+## Step 8
 
 Add in a ``||sprites:destroy||`` block to delete the food item. The ``||sprites:overlap||`` event automatically sets the sprite of type `Enemy` to ``||variables:otherSprite||``.
 
@@ -201,10 +213,25 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
     otherSprite.destroy()
 })
 ```
+
+## Step 9
+
+Next, add in a ``||sprites:say||`` block and make ``||variables:sprite||`` say something.
+
+```blocks
+enum SpriteKind {
+    Player,
+    Enemy
+}
+
+let otherSprite:Sprite = null
+let sprite:Sprite = null
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
+    otherSprite.destroy()
+    sprite.say("Yum!")
+})
+```
+
 ## Complete @unplugged
 
-Congratulations, your sprite can move around the screen!
-
-Play around with the different values that you use to change the position.
-
-Also, look at what happens if we change our sprite's velocity or acceleration instead of position.
+Congratulations, your sprite can now eat thinsg when they overlap!
