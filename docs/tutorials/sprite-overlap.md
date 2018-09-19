@@ -34,7 +34,7 @@ food = sprites.create(img`
 . . . . 2 2 2 2 2 2 2 . . . . . 
 . . . . . 2 2 2 2 2 . . . . . . 
 . . . . . . 2 2 2 . . . . . . .
-`)
+`, SpriteKind.Enemy)
 ```
 
 ## Step 3
@@ -78,7 +78,7 @@ head = sprites.create(img`
 . . . . . . . . . 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 . . . . . . . 
 . . . . . . . . . 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 . . . . . . . 
 . . . . . . . . . 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 . . . . . . . 
-`)
+`, SpriteKind.Player)
 ```
 
 
@@ -110,7 +110,7 @@ food = sprites.create(img`
 . . . . 2 2 2 2 2 2 2 . . . . . 
 . . . . . 2 2 2 2 2 . . . . . . 
 . . . . . . 2 2 2 . . . . . . . 
-`)
+`, SpriteKind.Enemy)
 head = sprites.create(img`
 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
@@ -144,7 +144,7 @@ head = sprites.create(img`
 . . . . . . . . . 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 . . . . . . . 
 . . . . . . . . . 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 . . . . . . . 
 . . . . . . . . . 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 . . . . . . . 
-`)
+`, SpriteKind.Player)
 food.setPosition(20, 60)
 head.setPosition(120, 60)
 ```
@@ -173,7 +173,7 @@ game.onUpdate(function () {
 
 ## Step 6
 
-Add in
+Add in a ``||sprites:on sprite overlaps||`` event from under ``||sprites:Sprites||``. Use the dropdown menu to detect when a sprite of kind `Player` overlaps with a sprite of kind `Enemy`
 
 
 ```blocks
@@ -183,19 +183,19 @@ enum SpriteKind {
 }
 let otherSprite:Sprite = null
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
-    otherSprite.destroy()
 })
 ```
 
 ## Step 7
 
-Add in
+Add in a ``||sprites:destroy||`` block to delete the food item. The ``||sprites:overlap||`` event automatically sets the sprite of type `Enemy` to ``||variables:otherSprite||``.
 
 ```blocks
 enum SpriteKind {
     Player,
     Enemy
 }
+
 let otherSprite:Sprite = null
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
     otherSprite.destroy()
