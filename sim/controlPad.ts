@@ -129,7 +129,6 @@ namespace pxsim {
             this.dPadRoot.el.style.left = left + "px";
             this.dPadRoot.el.style.top = top + "px";
             this.dPadRoot.setAttribute("height", width).setAttribute("width", width);
-<<<<<<< HEAD
 
             const scale = width / (COMPONENT_WIDTH + PADDING * 2);
             this.dPad.scale(width / (COMPONENT_WIDTH + PADDING * 2));
@@ -177,35 +176,7 @@ namespace pxsim {
                     { x: 0, y: 1 },
                     { x: 1, y: 1 }
                 ], DRAW_UNIT));
-=======
-            const scale = width / (D_PAD_SVG_WIDTH + PADDING * 2);
-            this.dPad.scale(scale);
-            this.dPad.translate(PADDING * scale, PADDING * scale);
-        }
 
-        moveButtons(left: number, top: number, width: number) {
-            this.buttonsRoot.el.style.position = "absolute";
-            this.buttonsRoot.el.style.left = left + "px";
-            this.buttonsRoot.el.style.top = top + "px";
-            this.buttonsRoot.setAttribute("height", width).setAttribute("width", width);
-
-            const scale = width / ((BUTTON_SVG_WIDTH * 2) + PADDING * 2);
-            this.buttons.scale(scale);
-            this.buttons.translate(PADDING * scale, PADDING * scale);
-        }
-
-        protected buildDom() {
-            this.drawDirectionalPad();
-            this.drawButtonGroup();
-
-            this.moveDPad(0, 0, COMPONENT_WIDTH)
-            this.moveButtons(0, 0, COMPONENT_WIDTH);
-        }
-
-        protected drawDirectionalPad() {
-            this.dPad = this.dPadRoot.group();
-            this.dPad.el.appendChild(svg.dPad.cloneNode(true));
->>>>>>> 7a3cb8809f5b27c6265830f21cb66bbe5dcb6b6f
 
             // Draw the real touch pads
             const unit = D_PAD_SVG_WIDTH / 3;
@@ -232,32 +203,19 @@ namespace pxsim {
             return pad;
         }
 
-<<<<<<< HEAD
         protected bindPadEvents(pad: s.Rect, target: Key) {
-=======
-        protected bindPadEvents(pad: s.Rect | s.Circle, target: Key) {
->>>>>>> 7a3cb8809f5b27c6265830f21cb66bbe5dcb6b6f
             this.keys.push({ el: pad.el, key: target })
         }
 
         protected drawButtonGroup() {
             this.buttons = this.buttonsRoot.group();
-<<<<<<< HEAD
-=======
-
-            const unit = BUTTON_SVG_WIDTH * 2 / 3;
->>>>>>> 7a3cb8809f5b27c6265830f21cb66bbe5dcb6b6f
 
             this.primary = this.drawButton("A", 2.25 * unit, unit, Key.A);
             this.secondary = this.drawButton("B", 0.75 * unit, 2.25 * unit, Key.B);
         }
 
         protected drawButton(symbol: string, cx: number, cy: number, key: Key) {
-<<<<<<< HEAD
             let r = DRAW_UNIT * 0.75;
-=======
-            let r = (BUTTON_SVG_WIDTH * 2 / 3) * 0.75;
->>>>>>> 7a3cb8809f5b27c6265830f21cb66bbe5dcb6b6f
 
             const buttonDom = symbol === "A" ? svg.aButton.cloneNode(true) : svg.bButton.cloneNode(true);
             const buttonG = this.buttons.group();
@@ -267,7 +225,6 @@ namespace pxsim {
                 .setClass("controller-button-overlay")
                 .at(r, r)
                 .radius(r)
-<<<<<<< HEAD
                 .fill(BUTTON_COLOR)
                 .stroke(BUTTON_DOWN_COLOR, 2);
 
@@ -283,9 +240,6 @@ namespace pxsim {
 
             return button;
         }
-=======
-                .fill("black", 0);
->>>>>>> 7a3cb8809f5b27c6265830f21cb66bbe5dcb6b6f
 
             buttonG.translate(cx - r, cy - r);
             this.bindPadEvents(overlay, key);
@@ -302,11 +256,8 @@ namespace pxsim {
             }
         }
     }
-<<<<<<< HEAD
 
     function scale(points: { x: number, y: number }[], factor: number) {
         return points.map(({ x, y }) => ({ x: x * factor, y: y * factor }))
     }
-=======
->>>>>>> 7a3cb8809f5b27c6265830f21cb66bbe5dcb6b6f
 }
