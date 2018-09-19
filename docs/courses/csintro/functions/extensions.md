@@ -22,7 +22,7 @@ https://youtu.be/VVjxMS29jjU
 [Alternative Video Location](https://aka.ms/40544a-extensiondart) 
 
 1. Open a new project (name it "football")
-2. Using the extensions menu, search for "darts" (or the full package location at `github.com/jwunderl/pxt-darts`). Notice how a new section is added to the menu, above ``||game:Game||``
+2. Using the extensions menu, look for "darts". Notice how a new section is added to the menu, above ``||game:Game||``
 3. Review the example code below, and either recreate it or build something similar
 
 ![Finding Dart Extension](/static/courses/csintro/functions/finding-darts.gif)
@@ -84,7 +84,7 @@ mySprite.setPosition(150, 110)
 ```
 
 ```package
-darts=github:jwunderl/pxt-darts#v0.0.15
+darts
 ```
 
 Using extensions can reduce the number of things you have to worry about while writing your own game.
@@ -175,10 +175,10 @@ projectile = sprites.createProjectile(img`
 7. In your new project ("use starryNight")
     * add a new ``||scene:background color||``
     * Add a ``||info:countdown||`` block so the game will eventually end
-7. **Challenge:** Create and add code to "use starryNight" so that a second type of projectile that will spawn a meteor every that moves across the screen
+7. **Challenge:** create and add code to "use starryNight" so that a second type of projectile that will spawn a meteor every that moves across the screen
     * Save the updated "starryNight" code and get a share link.
     * Add the share link into a new game and save as "challenge starryNight" 
-    * The Challenge game should have updated background color and countdown timer
+    * The challenge game should have updated background color and countdown timer
 
 ## What did we learn?
 

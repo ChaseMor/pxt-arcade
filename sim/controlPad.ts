@@ -4,15 +4,19 @@ namespace pxsim {
     import s = svgUtil;
 
     const COMPONENT_WIDTH = 60;
-    const DRAW_UNIT = COMPONENT_WIDTH / 3;
-    const PADDING = 20;
+    const PADDING = 5;
 
-    const D_PAD_COLOR = "#6B4F76";
-    const D_PAD_DOWN_COLOR = "#f4b342";
+    const D_PAD_SVG_WIDTH = 23.813;
+    const BUTTON_SVG_WIDTH = 13.533;
 
-    const BUTTON_COLOR = "#FE8C4F";
-    const BUTTON_DOWN_COLOR = "#DE5F26";
+    export interface KeyBinding {
+        el: Element;
+        key: Key;
+        isDown?: boolean;
+        dist?: number;
+    }
 
+<<<<<<< HEAD
     const aspectRatio = 2; // width / height
 
     export interface KeyBinding {
@@ -22,6 +26,8 @@ namespace pxsim {
         dist?: number;
     }
 
+=======
+>>>>>>> 7a3cb8809f5b27c6265830f21cb66bbe5dcb6b6f
     export class ControlPad {
         dPadRoot: s.SVG;
         buttonsRoot: s.SVG;
@@ -110,22 +116,22 @@ namespace pxsim {
         public mirrorKey(key: Key, down: boolean, realEvent?: boolean) {
             switch (key) {
                 case Key.Up:
-                    this.setDpadState(this.up, down);
+                    this.setOverlayState(this.up, down);
                     break;
                 case Key.Right:
-                    this.setDpadState(this.right, down);
+                    this.setOverlayState(this.right, down);
                     break;
                 case Key.Down:
-                    this.setDpadState(this.down, down);
+                    this.setOverlayState(this.down, down);
                     break;
                 case Key.Left:
-                    this.setDpadState(this.left, down);
+                    this.setOverlayState(this.left, down);
                     break;
                 case Key.A:
-                    this.setButtonState(this.primary, down);
+                    this.setOverlayState(this.primary, down);
                     break;
                 case Key.B:
-                    this.setButtonState(this.secondary, down);
+                    this.setOverlayState(this.secondary, down);
                     break;
             }
         }
@@ -135,6 +141,7 @@ namespace pxsim {
             this.dPadRoot.el.style.left = left + "px";
             this.dPadRoot.el.style.top = top + "px";
             this.dPadRoot.setAttribute("height", width).setAttribute("width", width);
+<<<<<<< HEAD
 
             const scale = width / (COMPONENT_WIDTH + PADDING * 2);
             this.dPad.scale(width / (COMPONENT_WIDTH + PADDING * 2));
@@ -182,46 +189,97 @@ namespace pxsim {
                     { x: 0, y: 1 },
                     { x: 1, y: 1 }
                 ], DRAW_UNIT));
+=======
+            const scale = width / (D_PAD_SVG_WIDTH + PADDING * 2);
+            this.dPad.scale(scale);
+            this.dPad.translate(PADDING * scale, PADDING * scale);
+        }
+
+        moveButtons(left: number, top: number, width: number) {
+            this.buttonsRoot.el.style.position = "absolute";
+            this.buttonsRoot.el.style.left = left + "px";
+            this.buttonsRoot.el.style.top = top + "px";
+            this.buttonsRoot.setAttribute("height", width).setAttribute("width", width);
+
+            const scale = width / ((BUTTON_SVG_WIDTH * 2) + PADDING * 2);
+            this.buttons.scale(scale);
+            this.buttons.translate(PADDING * scale, PADDING * scale);
+        }
+
+        protected buildDom() {
+            this.drawDirectionalPad();
+            this.drawButtonGroup();
+
+            this.moveDPad(0, 0, COMPONENT_WIDTH)
+            this.moveButtons(0, 0, COMPONENT_WIDTH);
+        }
+
+        protected drawDirectionalPad() {
+            this.dPad = this.dPadRoot.group();
+            this.dPad.el.appendChild(svg.dPad.cloneNode(true));
+>>>>>>> 7a3cb8809f5b27c6265830f21cb66bbe5dcb6b6f
 
             // Draw the real touch pads
-            this.up = this.drawTouchPad(this.dPad, DRAW_UNIT, 0);
+            const unit = D_PAD_SVG_WIDTH / 3;
+            this.up = this.drawTouchPad(this.dPad, unit, 0, unit, unit);
             this.bindPadEvents(this.up, Key.Up);
 
-            this.right = this.drawTouchPad(this.dPad, 2 * DRAW_UNIT, DRAW_UNIT);
+            this.right = this.drawTouchPad(this.dPad, 2 * unit, unit, unit, unit);
             this.bindPadEvents(this.right, Key.Right);
 
-            this.down = this.drawTouchPad(this.dPad, DRAW_UNIT, 2 * DRAW_UNIT);
+            this.down = this.drawTouchPad(this.dPad, unit, 2 * unit, unit, unit);
             this.bindPadEvents(this.down, Key.Down);
 
-            this.left = this.drawTouchPad(this.dPad, 0, DRAW_UNIT);
+            this.left = this.drawTouchPad(this.dPad, 0, unit, unit, unit);
             this.bindPadEvents(this.left, Key.Left);
         }
 
-        protected drawTouchPad(parent: s.Group, x: number, y: number, width = DRAW_UNIT, height = DRAW_UNIT) {
+        protected drawTouchPad(parent: s.Group, x: number, y: number, width: number, height: number) {
             const pad: s.Rect = parent.draw("rect")
+                .setClass("controller-button-overlay")
                 .at(x, y)
-                .fill(D_PAD_COLOR, 0)
+                .corners(1, 1)
+                .fill("black", 0)
                 .size(width, height);
             return pad;
         }
 
+<<<<<<< HEAD
         protected bindPadEvents(pad: s.Rect, target: Key) {
+=======
+        protected bindPadEvents(pad: s.Rect | s.Circle, target: Key) {
+>>>>>>> 7a3cb8809f5b27c6265830f21cb66bbe5dcb6b6f
             this.keys.push({ el: pad.el, key: target })
         }
 
         protected drawButtonGroup() {
             this.buttons = this.buttonsRoot.group();
+<<<<<<< HEAD
+=======
 
-            this.primary = this.drawButton("A", 2.5 * DRAW_UNIT, DRAW_UNIT, Key.A);
-            this.secondary = this.drawButton("B", 0.75 * DRAW_UNIT, 2.5 * DRAW_UNIT, Key.B);
+            const unit = BUTTON_SVG_WIDTH * 2 / 3;
+>>>>>>> 7a3cb8809f5b27c6265830f21cb66bbe5dcb6b6f
+
+            this.primary = this.drawButton("A", 2.25 * unit, unit, Key.A);
+            this.secondary = this.drawButton("B", 0.75 * unit, 2.25 * unit, Key.B);
         }
 
         protected drawButton(symbol: string, cx: number, cy: number, key: Key) {
+<<<<<<< HEAD
             let r = DRAW_UNIT * 0.75;
+=======
+            let r = (BUTTON_SVG_WIDTH * 2 / 3) * 0.75;
+>>>>>>> 7a3cb8809f5b27c6265830f21cb66bbe5dcb6b6f
 
-            const button: s.Circle = this.buttons.draw("circle")
-                .at(cx, cy)
+            const buttonDom = symbol === "A" ? svg.aButton.cloneNode(true) : svg.bButton.cloneNode(true);
+            const buttonG = this.buttons.group();
+            buttonG.el.appendChild(buttonDom);
+
+            const overlay = buttonG.draw("circle")
+                .setClass("controller-button-overlay")
+                .at(r, r)
                 .radius(r)
+<<<<<<< HEAD
                 .fill(BUTTON_COLOR)
                 .stroke(BUTTON_DOWN_COLOR, 2);
 
@@ -237,27 +295,30 @@ namespace pxsim {
 
             return button;
         }
+=======
+                .fill("black", 0);
+>>>>>>> 7a3cb8809f5b27c6265830f21cb66bbe5dcb6b6f
 
-        protected setDpadState(pad: s.Rect, down: boolean) {
-            if (down) {
-                pad.fill(D_PAD_DOWN_COLOR, 1);
-            }
-            else {
-                pad.fill(D_PAD_COLOR, 0);
-            }
+            buttonG.translate(cx - r, cy - r);
+            this.bindPadEvents(overlay, key);
+
+            return overlay;
         }
 
-        protected setButtonState(button: s.Circle, down: boolean) {
+        protected setOverlayState(overlay: s.Rect | s.Circle, down: boolean) {
             if (down) {
-                button.fill(BUTTON_DOWN_COLOR).stroke(BUTTON_COLOR);
+                overlay.setClass("controller-button-overlay pressed");
             }
             else {
-                button.fill(BUTTON_COLOR).stroke(BUTTON_DOWN_COLOR);
+                overlay.setClass("controller-button-overlay");
             }
         }
     }
+<<<<<<< HEAD
 
     function scale(points: { x: number, y: number }[], factor: number) {
         return points.map(({ x, y }) => ({ x: x * factor, y: y * factor }))
     }
+=======
+>>>>>>> 7a3cb8809f5b27c6265830f21cb66bbe5dcb6b6f
 }

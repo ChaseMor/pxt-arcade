@@ -1,75 +1,115 @@
-# CS Intro
+# CS INTRO BETA
 
-# CS Intro Unit 1: Blocks
+### ~hint
 
-## [Orientation](/courses/csintro/orientation)
+This course is currently in beta - this means that it is likely to have bugs and changes made fairly regularly. If you see anything that doesn't seem quite right, or if you have any suggestions, please file an issue on [github](github.com/microsoft/pxt-arcade).
 
-* [Birthday Algorithm](/courses/csintro/orientation/birthday-algorithm)
+### ~
+
+```codecard
+[{
+    "name": "Orientation",
+    "url": "/courses/csintro/orientation",
+    "imageUrl": "/static/courses/csintro/orientation.gif"
+}, {
+    "name": "Sprites",
+    "url": "/courses/csintro/sprites",
+    "imageUrl": "/static/courses/csintro/sprites.gif"
+}, {
+    "name": "Motion and Events",
+    "url": "/courses/csintro/motion-and-events",
+    "imageUrl": "/static/courses/csintro/motion-and-events.gif"
+}, {
+    "name": "Loops",
+    "url": "/courses/csintro/loops",
+    "imageUrl": "/static/courses/csintro/loops.gif"
+}, {
+    "name": "Functions",
+    "url": "/courses/csintro/functions",
+    "imageUrl": "/static/courses/csintro/functions.gif"
+}, {
+    "name": "Tile Map",
+    "url": "/courses/csintro/tilemap",
+    "imageUrl": "/static/courses/csintro/tilemap.gif"
+}, {
+    "name": "Logic",
+    "url": "/courses/csintro/logic",
+    "imageUrl": "/static/courses/csintro/logic.gif"
+}, {
+    "name": "Arrays",
+    "url": "/courses/csintro/arrays",
+    "imageUrl": "/static/courses/csintro/arrays.gif"
+}, {
+    "name": "Final Project",
+    "url": "/courses/csintro/final-project",
+    "imageUrl": "/static/courses/csintro/final-project.gif"
+}
+]
+```
+
+## Table of Contents
+
+### [About](/courses/csintro/about)
+
+* [Programming Language](/courses/csintro/about/script)
+* [For Teachers](/courses/csintro/about/teachers)
+* [Authors](/courses/csintro/about/authors)
+
+### [Orientation](/courses/csintro/orientation)
 * [Orientation to Makecode](/courses/csintro/orientation/makecode-orientation)
 * [Sprites](/courses/csintro/orientation/sprites)
+
+
+
+* [Unplugged: Rock Paper Scissors](/courses/csintro/orientation/unplugged)
 * [Variable Math](/courses/csintro/orientation/variable-math)
 * [Info Variables](/courses/csintro/orientation/info)
-* [Unplugged](/courses/csintro/orientation/unplugged)
 
-## [Sprites](/courses/csintro/sprites)
+### [Sprites](/courses/csintro/sprites)
 
+* [Unplugged: Sink a Ship](/courses/csintro/sprites/unplugged)
 * [Coordinate Walker](/courses/csintro/sprites/coordinate-walker)
 * [Collage](/courses/csintro/sprites/collage)
 * [Hello Sprite](/courses/csintro/sprites/hello-sprite)
-* [Unplugged](/courses/csintro/sprites/unplugged)
 
-## [Motion and Events](/courses/csintro/motion-and-events)
+### [Motion and Events](/courses/csintro/motion-and-events)
 
+* [Unplugged: Using a Controller](/courses/csintro/motion-and-events/unplugged)
 * [Sprite Motion Event](/courses/csintro/motion-and-events/sprite-motion-event)
 * [Overlap Section 1](/courses/csintro/motion-and-events/overlap1)
 * [Random](/courses/csintro/motion-and-events/random)
 * [Overlap Section 2](/courses/csintro/motion-and-events/overlap2)
-* [Sprite Create and On Create](/courses/csintro/motion-and-events/create-on-create-sprites)
-* [Unplugged](/courses/csintro/motion-and-events/unplugged)
-* [Project](/courses/csintro/motion-and-events/project)
 
-## [Review and Extensions](/courses/csintro/review)
 
-* [Review Game](/courses/csintro/review/review-game)
-* [Car Avoider](/courses/csintro/review/car-avoider)
-* [Baseball Catching](/courses/csintro/review/baseball-catching)
-* [Motion](/courses/csintro/review/motion)
-* [Projectiles](/courses/csintro/review/projectiles)
-* [Change By Practice](/courses/csintro/review/practice-change-by)
-* [Conditionals Practice](/courses/csintro/review/practice-conditionals)
-* [Functions Practice](/courses/csintro/review/practice-functions)
-* [Loops Practice](/courses/csintro/review/practice-loops)
-* [Projectiles Practice](/courses/csintro/review/practice-projectiles)
-* [Sprite Motion Practice](/courses/csintro/review/practice-sprite-motion)
-* [Variable Math Practice](/courses/csintro/review/practice-variable-math)
-* [String Math Practice](/courses/csintro/review/practice-string-math)
-
-## [Loops](/courses/csintro/loops)
 
 * [Intro](/courses/csintro/loops/intro)
+* [Unplugged: Circle a Chair](/courses/csintro/loops/unplugged)
 * [Increment Loop](/courses/csintro/loops/increment-loop)
 * [Projectiles](/courses/csintro/loops/projectiles)
 * [Projectiles from Sprites](/courses/csintro/loops/projectile-from)
 * [Physics](/courses/csintro/loops/physics)
 * [Unplugged](/courses/csintro/loops/unplugged)
+
+
+
 * [Project](/courses/csintro/loops/project)
 
-## [Functions](/courses/csintro/functions)
+### [Functions](/courses/csintro/functions)
 
-* [Functions Intro](/courses/csintro/functions/intro)
+* [Unplugged: Making a Sandwich](/courses/csintro/functions/unplugged)
+* [Intro to Functions](/courses/csintro/functions/intro)
 * [Reducing Redundancy with Functions](/courses/csintro/functions/redundancy)
 * [Using Extensions](/courses/csintro/functions/extensions)
-* [Unplugged](/courses/csintro/functions/unplugged)
 * [Project](/courses/csintro/functions/project)
 
-## [Tilemap](/courses/csintro/tilemap)
+### [Tilemap](/courses/csintro/tilemap)
 
 * [Intro](/courses/csintro/tilemap/intro)
 * [Interactions](/courses/csintro/tilemap/interactions)
 * [Using Corgi Extension](/courses/csintro/tilemap/extensions)
 * [Project](/courses/csintro/tilemap/project)
 
-## [Logic](/courses/csintro/logic)
+### [Logic](/courses/csintro/logic)
 
 * [Introduction](/courses/csintro/logic/intro)
 * [If and Else](/courses/csintro/logic/if-else)
@@ -78,7 +118,7 @@
 * [Logic in Loops](/courses/csintro/logic/while)
 * [Project](/courses/csintro/logic/project)
 
-## [Arrays](/courses/csintro/arrays)
+### [Arrays](/courses/csintro/arrays)
 
 * [Intro](/courses/csintro/arrays/intro)
 * [String Arrays](/courses/csintro/arrays/string)
@@ -86,88 +126,5 @@
 * [Tile Arrays](/courses/csintro/arrays/tilemap)
 * [Project](/courses/csintro/arrays/project)
 
-## [Final Project](/courses/csintro/final-project)
 
-# [CS Teacher Zone Material](/courses/csintro/teacherzone/trimmed-notes/teachers)
-
-## [Orientation Teacher](/courses/csintro/teacherzone/trimmed-notes/orientation)
-
-* [Birthday Algorithm](/courses/csintro/teacherzone/trimmed-notes/orientation/birthday-algorithm)
-* [Orientation to Makecode](/courses/csintro/teacherzone/trimmed-notes/orientation/makecode-orientation)
-* [Sprites](/courses/csintro/teacherzone/trimmed-notes/orientation/sprites)
-* [Variable Math](/courses/csintro/teacherzone/trimmed-notes/orientation/variable-math)
-* [Info Variables](/courses/csintro/teacherzone/trimmed-notes/orientation/info)
-
-## [Sprites Teacher](/courses/csintro/teacherzone/trimmed-notes/sprites)
-
-* [Coordinate Walker](/courses/csintro/teacherzone/trimmed-notes/sprites/coordinate-walker)
-* [Collage](/courses/csintro/teacherzone/trimmed-notes/sprites/collage)
-* [Hello Sprite](/courses/csintro/teacherzone/trimmed-notes/sprites/hello-sprite)
-
-## [Motion and Events Teacher](/courses/csintro/teacherzone/trimmed-notes/motion-and-events)
-
-* [Sprite Motion Event](/courses/csintro/teacherzone/trimmed-notes/motion-and-events/sprite-motion-event)
-* [Overlap Section 1](/courses/csintro/teacherzone/trimmed-notes/motion-and-events/overlap1)
-* [Random](/courses/csintro/teacherzone/trimmed-notes/motion-and-events/random)
-* [Overlap Section 2](/courses/csintro/teacherzone/trimmed-notes/motion-and-events/overlap2)
-* [Sprite Create and On Create](/courses/csintro/teacherzone/trimmed-notes/motion-and-events/create-on-create-sprites)
-* [Project](/courses/csintro/teacherzone/trimmed-notes/motion-and-events/project)
-
-## [Review and Extensions Teacher](/courses/csintro/teacherzone/trimmed-notes/review)
-
-* [Review Game](/courses/csintro/teacherzone/trimmed-notes/review/review-game)
-* [Car Avoider](/courses/csintro/teacherzone/trimmed-notes/review/car-avoider)
-* [Baseball Catching](/courses/csintro/teacherzone/trimmed-notes/review/baseball-catching)
-* [Motion](/courses/csintro/teacherzone/trimmed-notes/review/motion)
-* [Projectiles](/courses/csintro/teacherzone/trimmed-notes/review/projectiles)
-* [Change By Practice](/courses/csintro/teacherzone/trimmed-notes/review/practice-change-by)
-* [Conditionals Practice](/courses/csintro/teacherzone/trimmed-notes/review/practice-conditionals)
-* [Functions Practice](/courses/csintro/teacherzone/trimmed-notes/review/practice-functions)
-* [Loops Practice](/courses/csintro/teacherzone/trimmed-notes/review/practice-loops)
-* [Projectiles Practice](/courses/csintro/teacherzone/trimmed-notes/review/practice-projectiles)
-* [Sprite Motion Practice](/courses/csintro/teacherzone/trimmed-notes/review/practice-sprite-motion)
-* [Variable Math Practice](/courses/csintro/teacherzone/trimmed-notes/review/practice-variable-math)
-* [String Math Practice](/courses/csintro/teacherzone/trimmed-notes/review/practice-string-math)
-
-## [Loops Teacher](/courses/csintro/teacherzone/trimmed-notes/loops)
-
-* [Intro](/courses/csintro/teacherzone/trimmed-notes/loops/intro)
-* [Increment Loop](/courses/csintro/teacherzone/trimmed-notes/loops/increment-loop)
-* [Projectiles](/courses/csintro/teacherzone/trimmed-notes/loops/projectiles)
-* [Projectiles from Sprites](/courses/csintro/teacherzone/trimmed-notes/loops/projectile-from)
-* [Physics](/courses/csintro/teacherzone/trimmed-notes/loops/physics)
-* [Project](/courses/csintro/teacherzone/trimmed-notes/loops/project)
-
-## [Functions Teacher](/courses/csintro/teacherzone/trimmed-notes/functions)
-
-* [Functions Intro](/courses/csintro/teacherzone/trimmed-notes/functions/intro)
-* [Reducing Redundancy with Functions](/courses/csintro/teacherzone/trimmed-notes/functions/redundancy)
-* [Using Extensions](/courses/csintro/teacherzone/trimmed-notes/functions/extensions)
-* [Project](/courses/csintro/teacherzone/trimmed-notes/functions/project)
-
-## [Tilemap Teacher](/courses/csintro/teacherzone/trimmed-notes/tilemap)
-
-* [Intro](/courses/csintro/teacherzone/trimmed-notes/tilemap/intro)
-* [Interactions](/courses/csintro/teacherzone/trimmed-notes/tilemap/interactions)
-* [Using Corgi Extension](/courses/csintro/teacherzone/trimmed-notes/tilemap/extensions)
-* [Project](/courses/csintro/teacherzone/trimmed-notes/tilemap/project)
-
-## [Logic Teacher](/courses/csintro/teacherzone/trimmed-notes/logic)
-
-* [Introduction](/courses/csintro/teacherzone/trimmed-notes/logic/intro)
-* [If and Else](/courses/csintro/teacherzone/trimmed-notes/logic/if-else)
-* [Booleans](/courses/csintro/teacherzone/trimmed-notes/logic/booleans)
-* [Validating User Input](/courses/csintro/teacherzone/trimmed-notes/logic/user-input)
-* [Logic in Loops](/courses/csintro/teacherzone/trimmed-notes/logic/while)
-* [Project](/courses/csintro/teacherzone/trimmed-notes/logic/project)
-
-## [Arrays Teacher](/courses/csintro/teacherzone/trimmed-notes/arrays)
-
-* [Intro](/courses/csintro/teacherzone/trimmed-notes/arrays/intro)
-* [String Arrays](/courses/csintro/teacherzone/trimmed-notes/arrays/string)
-* [Sprite Arrays](/courses/csintro/teacherzone/trimmed-notes/arrays/sprites)
-* [Tile Arrays](/courses/csintro/teacherzone/trimmed-notes/arrays/tilemap)
-* [Project](/courses/csintro/teacherzone/trimmed-notes/arrays/project)
-
-## [Final Project](/courses/csintro/teacherzone/trimmed-notes/final-project)
-
+### [Final Project](/courses/csintro/final-project)
