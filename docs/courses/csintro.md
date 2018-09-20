@@ -79,8 +79,11 @@ This course is currently in beta - this means that it is likely to have bugs and
 * [Overlap Section 1](/courses/csintro/motion-and-events/overlap1)
 * [Random](/courses/csintro/motion-and-events/random)
 * [Overlap Section 2](/courses/csintro/motion-and-events/overlap2)
+* [Sprite Create and On Create](/courses/csintro/motion-and-events/create-on-create-sprites)
+* [Unplugged](/courses/csintro/motion-and-events/unplugged)
+* [Project](/courses/csintro/motion-and-events/project)
 
-
+### [Loops](/courses/csintro/loops)
 
 * [Intro](/courses/csintro/loops/intro)
 * [Unplugged: Circle a Chair](/courses/csintro/loops/unplugged)
@@ -89,9 +92,6 @@ This course is currently in beta - this means that it is likely to have bugs and
 * [Projectiles from Sprites](/courses/csintro/loops/projectile-from)
 * [Physics](/courses/csintro/loops/physics)
 * [Unplugged](/courses/csintro/loops/unplugged)
-
-
-
 * [Project](/courses/csintro/loops/project)
 
 ### [Functions](/courses/csintro/functions)
