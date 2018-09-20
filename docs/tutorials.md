@@ -34,6 +34,20 @@
   "url": "/tutorials/sprite-motion-3",
   "cardType": "tutorial",
   "imageUrl": "/static/tutorials/sprite-motion.png"
+},   
+{
+  "name": "Sprite Overlap",
+  "description": "Learn how to make sprites interact with each other",
+  "url": "/tutorials/sprite-overlap",
+  "cardType": "tutorial",
+  "imageUrl": "/static/tutorials/sprite-overlap.png"
+},
+{
+  "name": "Random Number",
+  "description": "Learn how to generate a random number and display it",
+  "url": "/tutorials/random",
+  "cardType": "tutorial",
+  "imageUrl": "/static/tutorials/random.png"
 }
 ]
 ```
