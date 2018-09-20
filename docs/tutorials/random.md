@@ -56,7 +56,7 @@ game.splash("Random Number is " + randomNumber)
 
 ## Step 6
 
-Adjust the range of the ``||math:pick random||`` block to be **1** to *100*
+Adjust the range of the ``||math:pick random||`` block to be **1** to **100**
 
 ```blocks
 let randomNumber = 0
