@@ -1,5 +1,4 @@
 /// <reference path="./svg.ts" />
-
 namespace pxsim {
     import s = svgUtil;
 
@@ -129,9 +128,8 @@ namespace pxsim {
             this.dPadRoot.el.style.left = left + "px";
             this.dPadRoot.el.style.top = top + "px";
             this.dPadRoot.setAttribute("height", width).setAttribute("width", width);
-
-            const scale = width / (COMPONENT_WIDTH + PADDING * 2);
-            this.dPad.scale(width / (COMPONENT_WIDTH + PADDING * 2));
+            const scale = width / (D_PAD_SVG_WIDTH + PADDING * 2);
+            this.dPad.scale(scale);
             this.dPad.translate(PADDING * scale, PADDING * scale);
         }
 
@@ -141,8 +139,8 @@ namespace pxsim {
             this.buttonsRoot.el.style.top = top + "px";
             this.buttonsRoot.setAttribute("height", width).setAttribute("width", width);
 
-            const scale = width / (COMPONENT_WIDTH + PADDING * 2);
-            this.buttons.scale(width / (COMPONENT_WIDTH + PADDING * 2));
+            const scale = width / ((BUTTON_SVG_WIDTH * 2) + PADDING * 2);
+            this.buttons.scale(scale);
             this.buttons.translate(PADDING * scale, PADDING * scale);
         }
 
@@ -156,27 +154,7 @@ namespace pxsim {
 
         protected drawDirectionalPad() {
             this.dPad = this.dPadRoot.group();
-
-            this.dPad.draw("polygon")
-                .at(0, 0)
-                .fill(D_PAD_COLOR)
-                .stroke("#412C3D", 2)
-                .setAttribute("stroke-linejoin", "round")
-                .with(scale([
-                    { x: 1, y: 0 },
-                    { x: 2, y: 0 },
-                    { x: 2, y: 1 },
-                    { x: 3, y: 1 },
-                    { x: 3, y: 2 },
-                    { x: 2, y: 2 },
-                    { x: 2, y: 3 },
-                    { x: 1, y: 3 },
-                    { x: 1, y: 2 },
-                    { x: 0, y: 2 },
-                    { x: 0, y: 1 },
-                    { x: 1, y: 1 }
-                ], DRAW_UNIT));
-
+            this.dPad.el.appendChild(svg.dPad.cloneNode(true));
 
             // Draw the real touch pads
             const unit = D_PAD_SVG_WIDTH / 3;
@@ -203,19 +181,21 @@ namespace pxsim {
             return pad;
         }
 
-        protected bindPadEvents(pad: s.Rect, target: Key) {
+        protected bindPadEvents(pad: s.Rect | s.Circle, target: Key) {
             this.keys.push({ el: pad.el, key: target })
         }
 
         protected drawButtonGroup() {
             this.buttons = this.buttonsRoot.group();
 
+            const unit = BUTTON_SVG_WIDTH * 2 / 3;
+
             this.primary = this.drawButton("A", 2.25 * unit, unit, Key.A);
             this.secondary = this.drawButton("B", 0.75 * unit, 2.25 * unit, Key.B);
         }
 
         protected drawButton(symbol: string, cx: number, cy: number, key: Key) {
-            let r = DRAW_UNIT * 0.75;
+            let r = (BUTTON_SVG_WIDTH * 2 / 3) * 0.75;
 
             const buttonDom = symbol === "A" ? svg.aButton.cloneNode(true) : svg.bButton.cloneNode(true);
             const buttonG = this.buttons.group();
@@ -225,21 +205,7 @@ namespace pxsim {
                 .setClass("controller-button-overlay")
                 .at(r, r)
                 .radius(r)
-                .fill(BUTTON_COLOR)
-                .stroke(BUTTON_DOWN_COLOR, 2);
-
-            this.buttons.draw("text")
-                .at(cx, cy)
-                .text(symbol)
-                .fill("white")
-                .anchor("middle")
-                .alignmentBaseline("middle");
-
-            r *= 0.6; // the actual radius is bigger, see btnEvent() above
-            this.bindPadEvents(this.drawTouchPad(this.buttons, cx - r, cy - r, r * 2, r * 2), key);
-
-            return button;
-        }
+                .fill("black", 0);
 
             buttonG.translate(cx - r, cy - r);
             this.bindPadEvents(overlay, key);
@@ -255,9 +221,5 @@ namespace pxsim {
                 overlay.setClass("controller-button-overlay");
             }
         }
-    }
-
-    function scale(points: { x: number, y: number }[], factor: number) {
-        return points.map(({ x, y }) => ({ x: x * factor, y: y * factor }))
     }
 }
