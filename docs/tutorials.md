@@ -48,6 +48,13 @@
   "url": "/tutorials/random",
   "cardType": "tutorial",
   "imageUrl": "/static/tutorials/random.png"
+}, 
+{
+  "name": "Simple Extensions",
+  "description": "Learn the basics of using extensions and create a platformer",
+  "url": "/tutorials/simple-extensions",
+  "cardType": "tutorial",
+  "imageUrl": "/static/tutorials/simple-extensions.gif"
 }
 ]
 ```
@@ -55,4 +62,4 @@
 ## See Also
 
 [Simple Maze](/tutorials/simple-maze)
-[Sprite Motion](/tutorials/sprite-motion)
+[Simple Extensions](/tutorials/simple-extensions)
