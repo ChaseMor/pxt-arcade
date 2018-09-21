@@ -4,20 +4,20 @@
 
 Let's make a game that responds when one sprite overlaps another
 
-![Simple sprite overlap](/static/tutorials/sprite-overlap/sprite-overlap.gif)
+![Simple sprite overlap](/static/tutorials/courses/csintro/motion-and-events/sprite-overlap/sprite-overlap.gif)
 
 ## Step 1
 
 Start by making 2 new ``||variables:variables||`` called ``||variables:food||`` and ``||variables:head||``
 
-![Set Variables](/static/tutorials/sprite-overlap/set-variables.gif)
+![Set Variables](/static/tutorials/courses/csintro/motion-and-events/sprite-overlap/set-variables.gif)
 
 ## Step 2
 
 Start by making a simple sprite. Make this sprite something that can be eaten, like a cherry. Where is says ``||variables:mySprite||`` use the drop down menu to change it to ``||variables:food||``. Change the kind of this sprite from `Player` to `Enemy`.
 
 
-![Set Name and SpriteKind](/static/tutorials/sprite-overlap/set-name-and-spritekind.gif)
+![Set Name and SpriteKind](/static/tutorials/courses/csintro/motion-and-events/sprite-overlap/set-name-and-spritekind.gif)
 
 ```blocks
 enum SpriteKind {
@@ -187,7 +187,7 @@ game.onUpdate(function () {
 Add in a ``||sprites:on sprite overlaps||`` event from under ``||sprites:Sprites||``. Use the dropdown menu to detect when a sprite of kind `Player` overlaps with a sprite of kind `Enemy`
 
 
-![Change Overlapping SpriteKind](/static/tutorials/sprite-overlap/change-overlapping-spritekind.gif)
+![Change Overlapping SpriteKind](/static/tutorials/courses/csintro/motion-and-events/sprite-overlap/change-overlapping-spritekind.gif)
 
 ```blocks
 enum SpriteKind {

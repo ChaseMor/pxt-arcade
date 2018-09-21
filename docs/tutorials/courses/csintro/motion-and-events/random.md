@@ -4,7 +4,7 @@
 
 Let's make a game that responds when one sprite overlaps another
 
-![Random number](/static/tutorials/random/random.gif)
+![Random number](/static/tutorials/courses/csintro/motion-and-events/random/random.gif)
 
 ## Step 1
 
@@ -24,7 +24,7 @@ randomNumber = 0
 Drag in a ``||math:pick random||`` block into the value of the ``||variables:set variable to||`` block
 
 
-![Pick random number](/static/tutorials/random/pick-random.gif)
+![Pick random number](/static/tutorials/courses/csintro/motion-and-events/random/pick-random.gif)
 
 ```blocks
 let randomNumber = 0
@@ -46,7 +46,7 @@ game.splash("Hello" + "World")
 Add in a ``||text:join||`` block into the value of the ``||game:splash||`` block. In the first value for the ``||text:join||``, type "Random Number is " and in the second value place ``||variables:randomNumber||``
 
 
-![Splash random number](/static/tutorials/random/splash-random.gif)
+![Splash random number](/static/tutorials/courses/csintro/motion-and-events/random/splash-random.gif)
 
 ```blocks
 let randomNumber = 0

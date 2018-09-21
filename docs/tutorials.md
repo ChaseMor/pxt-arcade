@@ -17,37 +17,37 @@
 {
   "name": "Sprite Motion",
   "description": "Learn how to move a sprite around the screen",
-  "url": "/tutorials/sprite-motion",
+  "url": "/tutorials/courses/csintro/motion-and-events/sprite-motion",
   "cardType": "tutorial",
-  "imageUrl": "/static/tutorials/sprite-motion.png"
+  "imageUrl": "/static/tutorials/courses/csintro/motion-and-events/sprite-motion.png"
 },
 {
   "name": "Sprite Motion 2",
   "description": "Learn how to move a sprite around the screen",
-  "url": "/tutorials/sprite-motion-2",
+  "url": "/tutorials/courses/csintro/motion-and-events/sprite-motion-2",
   "cardType": "tutorial",
-  "imageUrl": "/static/tutorials/sprite-motion.png"
+  "imageUrl": "/static/tutorials/courses/csintro/motion-and-events/sprite-motion.png"
 },
 {
   "name": "Sprite Motion 3",
   "description": "Learn how to move a sprite around the screen",
-  "url": "/tutorials/sprite-motion-3",
+  "url": "/tutorials/courses/csintro/motion-and-events/sprite-motion-3",
   "cardType": "tutorial",
-  "imageUrl": "/static/tutorials/sprite-motion.png"
+  "imageUrl": "/static/tutorials/courses/csintro/motion-and-events/sprite-motion.png"
 },   
 {
   "name": "Sprite Overlap",
   "description": "Learn how to make sprites interact with each other",
-  "url": "/tutorials/sprite-overlap",
+  "url": "/tutorials/courses/csintro/motion-and-events/sprite-overlap",
   "cardType": "tutorial",
-  "imageUrl": "/static/tutorials/sprite-overlap.png"
+  "imageUrl": "/static/tutorials/courses/csintro/motion-and-events/sprite-overlap.png"
 },
 {
   "name": "Random Number",
   "description": "Learn how to generate a random number and display it",
-  "url": "/tutorials/random",
+  "url": "/tutorials/courses/csintro/motion-and-events/random",
   "cardType": "tutorial",
-  "imageUrl": "/static/tutorials/random.png"
+  "imageUrl": "/static/tutorials/courses/csintro/motion-and-events/random.png"
 }, 
 {
   "name": "Simple Extensions",

@@ -4,7 +4,7 @@
 
 Welcome to @boardname@! Let's start by making a basic sprite and having it move around the screen
 
-![Simple sprite moving](/static/tutorials/sprite-motion-2/sprite-motion.gif)
+![Simple sprite moving](/static/tutorials/courses/csintro/motion-and-events/sprite-motion-2/sprite-motion.gif)
 
 ## Step 1
 
@@ -36,7 +36,7 @@ mySprite = sprites.create(img`
 
 Click on the grey box in ``||variables:set mySprite to||`` an draw your sprite's image. It could be anything you like: A blob, a square, a stick figure, a smiley face, etc.
 
-![Draw a figure for the sprite](/static/tutorials/sprite-motion-2/draw-sprite.gif)
+![Draw a figure for the sprite](/static/tutorials/courses/csintro/motion-and-events/sprite-motion-2/draw-sprite.gif)
 
 ```blocks
 let mySprite: Sprite = null
