@@ -48,6 +48,13 @@
   "url": "/tutorials/courses/csintro/motion-and-events/random",
   "cardType": "tutorial",
   "imageUrl": "/static/tutorials/courses/csintro/motion-and-events/random.png"
+},
+{
+  "name": "Smiley Faces",
+  "description": "Learn how to make smiley faces and position them about the screen",
+  "url": "/tutorials/smiley-faces",
+  "cardType": "tutorial",
+  "imageUrl": "/static/tutorials/smiley-faces.png"
 }, 
 {
   "name": "Simple Extensions",
