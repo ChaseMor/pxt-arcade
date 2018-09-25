@@ -5,7 +5,7 @@
 Let's learn to draw some smiley faces on the screen
 
 
-**Note:** You can choose to make any types of smiley faces you want, but for this tutorial, we'll be making a happy, laughing and neutral smiley face.
+**Note:** You can choose to make any type of smiley faces you want, but for this tutorial, we'll be making a happy, laughing and neutral smiley face.
 
 ![End Result](/static/tutorials/smiley-faces/smiley-faces.png)
 
