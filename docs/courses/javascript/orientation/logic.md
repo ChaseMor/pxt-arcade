@@ -102,13 +102,45 @@ We saw in blocks a way of performing operations on boolean. This was done with t
 
 Here is a table of these operators and their JavaScript equivalents
 
-|Name 	|JavaScript 		|
-|:---	|:---:				|
-|And	|`bool1 && bool2`	|
-|Or 	|`bool1` &vert;&vert; `bool2` |
-|Not 	|`!bool1`			|
+|Name 	|JavaScript 					|
+|:---	|:---:							|
+|And	|`bool1 && bool2`				|
+|Or 	|`bool1` &vert;&vert; `bool2` 	|
+|Not 	|`!bool1`						|
+
+### ~hint
+
+Note: When writing Or statements, you need to use the `|` character. This character is called either a vertical bar or pipe and is usually located below the backspace key.
+
+### ~
 
 ### Examples of using Comparisons and Boolean Operators
+
+```typescript
+let val1: number = 5;
+let val2: number = 0;
+if (val1 > 2 && val2 == 0) {
+	// code for if the condition is true
+}
+```
+
+```typescript
+let num: number = 5;
+let bool: boolean = true;
+if (num > 2 || bool == 0) {
+	// code for if the condition is true
+}
+```
+
+
+
+
+
+
+
+
+
+
 
 ```typescript
 let word: string = "word";
