@@ -2,15 +2,6 @@
 
 One of the key topics covered with blocks was the idea of using logic to read the state of a program, and alter its behavior accordingly. As expected, everything that we did in blocks, we can do in JavaScript and we can actually do more.
 
-table of blocks -> JavaScript equivalent
-
-|     |     |
-| --- | --- |
-| a and b | a && b |
-| not a | !a |
-
-etc
-
 ### If and else statements 
 
 Some of the key blocks we used for logic were the ``||logic:if||`` and ``||logic:if else||`` blocks.
@@ -82,6 +73,13 @@ else console.log("num is not one!");
 
 This keeps if statements small and compact, but is usually avoided.
 
+## Student Task 1:
+
+1. Create a variable that stores a number
+2. Use an `if` statement to perform some comparison on this variable
+3. If the condition is true, print a message to the console
+4. If the condition is false, print a different message to the console
+
 ## Booleans
 
 In blocks, we saw that we could store the value of a boolean as a variable so that we could keep track of it. In JavaScript, we do the same.
@@ -102,17 +100,23 @@ We saw in blocks a way of performing operations on boolean. This was done with t
 
 Here is a table of these operators and their JavaScript equivalents
 
-|Name 	|JavaScript 					|
-|:---	|:---:							|
-|And	|`bool1 && bool2`				|
-|Or 	|`bool1` &vert;&vert; `bool2` 	|
-|Not 	|`!bool1`						|
+|Name 	|JavaScript 					|Precedence |
+|:---	|:---:							|:---:		|
+|Not 	|`!bool1`						|Highest	|
+|And	|`bool1 && bool2`				|Medium		|
+|Or 	|`bool1` &vert;&vert; `bool2` 	|Lowest		|
 
 ### ~hint
 
 Note: When writing Or statements, you need to use the `|` character. This character is called either a vertical bar or pipe and is usually located below the backspace key.
 
 ### ~
+
+The precedence of operators becomes an issue when your have different operators that aren't separated by parenthesis. Like the case of `bool1 && bool2 || !bool3`. 
+
+The main take-away from these precedences is that all `&&` operators will be completed before any `||` operators
+
+
 
 ### Examples of using Comparisons and Boolean Operators
 
@@ -133,25 +137,9 @@ if (num > 2 || bool == 0) {
 ```
 
 
+## Student Task 2:
 
-
-
-
-
-
-
-
-
-```typescript
-let word: string = "word";
-let num: number = 1;
-
-if (word == "word" && num > 0) {
-    if (num < 2) {
-        console.log("I'm here!");
-    } else {
-        console.log("No I'm here!");
-    }
-}
-console.log("I'm outside!");
-```
+1. Create two or more variables that each store a number
+2. Use an `if` statement to perform **two** comparison on these variable
+3. If the condition is true, print a message to the console
+4. If the condition is false, print a different message to the console
