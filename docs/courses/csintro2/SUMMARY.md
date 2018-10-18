@@ -1,8 +1,8 @@
-## Courses
+# Courses
 
 * [Courses](/courses)
 
-## CS Intro 2
+# CS Intro 2
 
 * [CS Intro 2](/courses/csintro2)
 

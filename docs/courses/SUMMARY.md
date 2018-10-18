@@ -23,3 +23,12 @@
     * [Arrays](/courses/csintro2/arrays)
     * [Review](/courses/csintro2/review)
     * [Final Project](/courses/csintro2/final-project)
+
+## [CS Intro 3](/courses/csintro3)
+
+* [CS Intro 3](/courses/csintro3)
+    * [About](/courses/csintro3/about)
+    * [Orientation](/courses/csintro3/orientation)
+    * [Functions](/courses/csintro3/functions)
+    * [Events](/courses/csintro3/events)
+    * [Arrays](/courses/csintro3/arrays)

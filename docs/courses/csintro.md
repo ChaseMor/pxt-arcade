@@ -18,6 +18,10 @@ These courses are currently in beta - this means that they are likely to have bu
     "name": "CS Intro 2",
     "description": "A continuation of the Intro to CS course",
     "url":"/courses/csintro2"
+}, {
+    "name": "CS Intro 3",
+    "imageUrl": "/static/courses/csintro3/csintro3.png",
+    "url":"/courses/csintro3"
 }
 ]
 ```
