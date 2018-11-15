@@ -1,6 +1,32 @@
-## dropping in cut problems here
+# Problem Set: Parameters
 
-## Example #3a: Capslock
+This section contains a number of selected problems for the Parameters section.
+
+It is recommended that you review the problems, and complete a few before moving on to the next section.
+
+## Problem #: Pizza Place
+
+The following function will randomly place a pizza sprite on the screen.
+
+```typescript
+function makePizza() {
+    let pizza: Sprite = sprites.create(sprites.food.smallPizza);
+    pizza.x = Math.randomRange(0, scene.screenWidth());
+    pizza.y = Math.randomRange(0, scene.screenHeight());
+    loops.pause(200);
+}
+```
+
+Copy this function into your code. 
+
+You're running your own pizza place and have received the following orders from customers:
+* An order of 3 pizzas
+* An order of 5 pizzas
+* An order of 2 pizzas
+
+Write a function called ``makeOrder`` that takes in number parameter called ``numOfOrders``. The function should ``||game:game.splash||`` how many pizzas have been ordered and then use a ``||loops:for||`` loop to make that many pizzas.
+
+## Problem #: Capslock
 
 Parameters don't have to just be strings. They can be any type.
 
@@ -23,9 +49,9 @@ printHello(7, false);
 
 cut from section because getting into three levels of nesting is a bit much for now; making them make this function (probably refactored as storing the variable first to reduce the nesting) would be a reasonable second to last task here
 
-## Example #3b: Follow the Leader
+## Example #: Follow the Leader
 
-Including ``||sprites:sprites||`` work too!
+Write a function called ``follow`` that accepts 2 ``||sprites:sprites||``, a ``leader
 
 ```typescript
 function follow(follower: Sprite, leader: Sprite) {
