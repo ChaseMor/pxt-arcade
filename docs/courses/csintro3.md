@@ -47,6 +47,7 @@ This course is currently in beta - this means that it is likely to have bugs and
 * [Logic](/courses/csintro3/structure/logic)
 * [Loops](/courses/csintro3/structure/loops)
 * [Sprites](/courses/csintro3/structure/sprites)
+* [Tile Maps](/courses/csintro3/structure/tilemaps)
 * [Corgio Extension](/courses/csintro3/structure/extensions)
 * [Namespaces](/courses/csintro3/structure/namespaces)
 
@@ -72,4 +73,5 @@ This course is currently in beta - this means that it is likely to have bugs and
 * [Arrays of Numbers](/courses/csintro3/arrays/numbers)
 * [Array Manipulation](/courses/csintro3/arrays/strings)
 * [Arrays of Sprites](/courses/csintro3/arrays/sprites)
-* [Tile map](/courses/csintro3/arrays/tilemap)
+* [Tiles](/courses/csintro3/arrays/tiles)
+* [Images](/courses/csintro3/arrays/images)
