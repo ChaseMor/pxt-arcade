@@ -1,5 +1,18 @@
 // Auto-generated. Do not edit.
 declare namespace jacdac {
+
+    /**
+     * Starts the JacDac protocol
+     */
+    //% shim=jacdac::start
+    function start(): void;
+
+    /**
+     * Starts the JacDac protocol
+     */
+    //% shim=jacdac::stop
+    function stop(): void;
+
     /**
      * Internal
      */
@@ -47,11 +60,15 @@ declare interface JacDacDriverStatus {
 
     /** Get device id for events. */
     //% property shim=JacDacDriverStatusMethods::id
-    id: boolean;
+    id: uint32;
 
     /** If paired, paired instance address */
     //% property shim=JacDacDriverStatusMethods::isPairedInstanceAddress
-    isPairedInstanceAddress(address: uint8): uint32;
+    isPairedInstanceAddress(address: uint8): boolean;
+
+    /** Sends a pairing packet */
+    //% shim=JacDacDriverStatusMethods::sendPairingPacket
+    sendPairingPacket(buf: Buffer): void;
 }
 
 // Auto-generated. Do not edit. Really.
