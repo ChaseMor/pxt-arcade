@@ -71,9 +71,10 @@ namespace pxsim {
      * Do not store state anywhere else!
      */
     export class Board extends pxsim.BaseBoard
-        implements pxsim.MusicBoard {
+        implements pxsim.MusicBoard, pxsim.JacDacBoard {
         public id: string;
         public bus: EventBus;
+        public jacdacState: pxsim.JacDacState;
         public audioState: AudioState;
         public background: HTMLDivElement;
         public controlsDiv: HTMLDivElement;
@@ -94,6 +95,8 @@ namespace pxsim {
             this.bus = new EventBus(runtime);
             this.screenState = new ScreenState(null)
             this.audioState = new AudioState();
+            this.jacdacState = new JacDacState(this);
+            this.addMessageListener(this.receiveScreenshot.bind(this));
         }
 
         getDefaultPitchPin(): Pin {
@@ -117,7 +120,7 @@ namespace pxsim {
             }
         }
 
-        public receiveMessage(msg: SimulatorMessage) {
+        private receiveScreenshot(msg: SimulatorMessage) {
             if (msg.type == "screenshot")
                 this.screenshotAsync((msg as SimulatorScreenshotMessage).title || pxsim.title || "...")
                     .then(img => {
