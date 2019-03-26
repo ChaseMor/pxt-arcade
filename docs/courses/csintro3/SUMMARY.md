@@ -39,6 +39,7 @@
     * [Tiles](/courses/csintro3/arrays/tiles)
     * [Images](/courses/csintro3/arrays/images)
     * [Case Study](/courses/csintro3/arrays/case-study)
+* [Unit 3 Final Project](/courses/csintro3/final-project)
 * [Appendix](/courses/csintro3/appendix)
     * [Switch Statements](/courses/csintro3/appendix/switch)
     * [Anonymous Functions](/courses/csintro3/appendix/anonymous)

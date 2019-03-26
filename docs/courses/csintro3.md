@@ -28,6 +28,10 @@ This course is currently in beta - this means that it is likely to have bugs and
         "name": "Arrays",
         "url": "/courses/csintro3/arrays",
         "imageUrl": "/static/courses/csintro3/arrays.gif"
+    }, {
+        "name": "Unit 3 Project",
+        "url": "/courses/csintro3/final-project",
+        "imageUrl": "/static/courses/csintro3/final-project.gif"
     }
 ]
 ```
@@ -87,6 +91,8 @@ This course is currently in beta - this means that it is likely to have bugs and
 * [Tiles](/courses/csintro3/arrays/tiles)
 * [Images](/courses/csintro3/arrays/images)
 * [Case Study](/courses/csintro3/arrays/case-study)
+
+### [Unit 3 Project](/courses/csintro3/final-project)
 
 ### [Appendix](/courses/csintro3/appendix)
 
